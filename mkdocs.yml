@@ -1,2 +1,9 @@
 site_name: My Docs
 theme: readthedocs
+
+pages:
+    - Linux: 'linux/linux.md'
+    - NAS: 'nas/nas.md'
+    - Vim: 'vim/vim.md'
+    - VSCode: 'vscode/vscode.md'
+    - python: 'python/python.md'
