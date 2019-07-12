@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>自定义函数的特殊属性 - pyv wiki</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u81ea\u5b9a\u4e49\u51fd\u6570\u7684\u7279\u6b8a\u5c5e\u6027";
+    var mkdocs_page_input_path = "python\\\u81ea\u5b9a\u4e49\u51fd\u6570\u7684\u7279\u6b8a\u5c5e\u6027.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> pyv wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Linux</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../linux/scp/">scp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/awk/">awk</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/sed/">sed</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/sed-single-line-command/">sed单行命令合集</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/后台运行/">linux后台运行</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">NAS</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../nas/nas/">nas</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Vim</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../vim/vim code slice/">代码片段</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/vunble/">vunble</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">VSCode</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../vscode/vscode远程/">vscode访问修改远程文件</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">python</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../断言和异常/">断言和异常</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">自定义函数的特殊属性</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">自定义函数的特殊属性</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_2">例子</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_3">方法与函数的区别</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#1-95_doc__">1. __doc__</a></li>
+        
+            <li><a class="toctree-l4" href="#2-95_name__">2. __name__</a></li>
+        
+            <li><a class="toctree-l4" href="#3-95_qualname__">3. __qualname__</a></li>
+        
+            <li><a class="toctree-l4" href="#4-module">4. module</a></li>
+        
+            <li><a class="toctree-l4" href="#5-defaults">5. defaults</a></li>
+        
+            <li><a class="toctree-l4" href="#6-code">6. code</a></li>
+        
+            <li><a class="toctree-l4" href="#7-globals">7. globals</a></li>
+        
+            <li><a class="toctree-l4" href="#8-dict">8. dict</a></li>
+        
+            <li><a class="toctree-l4" href="#9-closure">9. closure</a></li>
+        
+            <li><a class="toctree-l4" href="#10-annotations">10. annotations</a></li>
+        
+            <li><a class="toctree-l4" href="#11-95_kwdefaults__">11. __kwdefaults__</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">参考链接</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../code_slice/">code slice</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../package/">package</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../python const/">constant</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pip/">pip镜像源</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../python unittest/">python的unittest单元测试框架断言整理汇总</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">正则表达式</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../regexp/零宽断言/">零宽断言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/成对括号/">成对括号</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">pyv wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>python &raquo;</li>
+        
+      
+    
+    <li>自定义函数的特殊属性</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="_1"><strong>自定义函数的特殊属性</strong></h3>
+<p>Python 中通过函数定义所创建的用户自定义函数对象均具有一些特殊属性，需要注意的是这里介绍的是自定义函数（function类型）的特殊属性，而非方法（method 类型）的特殊属性，函数和方法的特熟属性以及默认的返回值可能不尽相同。</p>
+<h3 id="_2">例子</h3>
+<pre><code>class Test():
+
+    def func(self, v = 'dog'):
+        '''这里演示一个闭包函数'''
+
+        name = 'dobi'
+        def inn_func(age = 1):
+            print(name, v, age)
+
+        return inn_func
+
+test = Test()
+clsfunc = test.func()
+</code></pre>
+
+<h3 id="_3"><strong>方法与函数的区别</strong></h3>
+<p>实例的函数为bound method，而类的函数以及闭包均为function，需要强调的是 Python 2.x 中类的函数为unbound method，这点与Python 3.x 有所不同，本文则基于 Python 3.51 整理。</p>
+<h4 id="1-95_doc__">1. __doc__</h4>
+<p>可写；用于获取函数的文档说明，如果没有，则返回 None。</p>
+<pre><code>print('Test.func.__doc__:', Test.func.__doc__)
+# Test.func.__doc__: 这里演示一个闭包函数
+Test.func.__doc__ = 'ddd'  #注意，这里是 Test,不能是 test
+print('Test.func.__doc__:', Test.func.__doc__)
+# Test.func.__doc__: ddd
+</code></pre>
+
+<h4 id="2-95_name__">2. __name__</h4>
+<p>可写；获取函数的名称。</p>
+<pre><code>print('Test.func.__name__:', Test.func.__name__)
+# Test.func.__name__: func
+Test.func.__name__ = 'pet'
+print('Test.func.__name__:', Test.func.__name__)
+# Test.func.__name__: pet
+</code></pre>
+
+<h4 id="3-95_qualname__">3. __qualname__</h4>
+<p>可写；获取函数的qualname：点示法显示函数名称、所在的类、模块等梯级地址。</p>
+<pre><code>print('Test.func.__qualname__:', Test.func.__qualname__)
+# Test.func.__qualname__: Test.func
+Test.func.__qualname__ = 'path'
+print('Test.func.__qualname__:', Test.func.__qualname__)
+# Test.func.__qualname__: path
+</code></pre>
+
+<h4 id="4-module">4. <strong><strong>module</strong></strong></h4>
+<p>可写；返回函数所在的模块，如果无则返回None。</p>
+<pre><code>print('Test.func.__module__:', Test.func.__module__)
+# Test.func.__module__: __main__
+Test.func.__module__ = 'a'
+print('Test.func.__module__:', Test.func.__module__)
+# Test.func.__module__: a
+</code></pre>
+
+<h4 id="5-defaults">5. <strong><strong>defaults</strong></strong></h4>
+<p>可写；以元组的形式返回函数的默认参数，如果无默认参数则返回None。</p>
+<pre><code>print('Test.func.__defaults__:', Test.func.__defaults__)
+# Test.func.__defaults__: ('dog',)
+Test.func.__defaults__ = ('cat',)
+print('Test.func.__defaults__:', Test.func.__defaults__)
+# Test.func.__defaults__: ('cat',)
+print('clsfunc.__defaults__:', clsfunc.__defaults__)
+# clsfunc.__defaults__: (1,)
+clsfunc.__defaults__ = (2,)
+print('clsfunc.__defaults__:', clsfunc.__defaults__)
+# clsfunc.__defaults__: (2,)
+</code></pre>
+
+<h4 id="6-code">6. <strong><strong>code</strong></strong></h4>
+<p>可写；返回已编译的函数对象。</p>
+<pre><code>print('Test.func.__code__:', Test.func.__code__)
+# Test.func.__code__: &lt;code object func at 0x0000020F072C2F60, file &quot;D:\...\a.py&quot;, line 4&gt;
+
+def func2():print('cat')
+Test.func.__code__ = func2.__code__
+Test.func()
+# cat
+print('Test.func.__code__:', Test.func.__code__)
+# Test.func.__code__: &lt;code object func2 at 0x0000020F072C5780, file &quot;D:\...\a.py&quot;, line 38&gt;
+</code></pre>
+
+<h4 id="7-globals">7. <strong><strong>globals</strong></strong></h4>
+<p>只读，以字典的形式返回函数所在的全局命名空间所定义的全局变量。</p>
+<pre><code class="python">print('Test.func.__globals__:', Test.func.__globals__)
+# Test.func.__globals__: {
+# '__cached__': None, 
+# 'Test': &lt;class '__main__.Test'&gt;, 
+# '__builtins__': &lt;module 'builtins' (built-in)&gt;, 
+# 'func2': &lt;function func2 at 0x0000020F077D3C80&gt;, 
+# '__spec__': None, 
+# '__doc__': None, 
+# '__file__': 'D:\\...\\a.py', 
+# 'test': &lt;__main__.Test object at 0x0000020F077E5DA0&gt;, 
+# 'clsfunc': &lt;function Test.func.&lt;locals&gt;.inn_func at 0x0000020F071D7F28&gt;, 
+# '__package__': None, 
+# '__name__': '__main__', 
+# '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x0000020F07289828&gt;
+# }
+</code></pre>
+
+<h4 id="8-dict">8. <strong><strong>dict</strong></strong></h4>
+<p>可写；以字典的形式返回命名空间所支持的任意自定义的函数属性。</p>
+<pre><code>print('Test.func.__dict__:', Test.func.__dict__)
+# Test.func.__dict__: {}
+</code></pre>
+
+<h4 id="9-closure">9. <strong><strong>closure</strong></strong></h4>
+<p>只读；以包含cell的元组形式返回闭包所包含的自由变量。</p>
+<pre><code>print('Test.func.__closure__:', Test.func.__closure__)
+# None
+print('clsfunc.__closure__:', clsfunc.__closure__)
+# clsfunc.__closure__: (
+# &lt;cell at 0x0000020F071FE708: str object at 0x0000020F07289998&gt;, 
+# &lt;cell at 0x0000020F072B8C78: str object at 0x0000020F0766C538&gt;
+# )
+print('clsfunc.__closure__[x]:', clsfunc.__closure__[0].cell_contents, clsfunc.__closure__[1].cell_contents)
+# clsfunc.__closure__[x]: dobi dog
+</code></pre>
+
+<h4 id="10-annotations">10. <strong><strong>annotations</strong></strong></h4>
+<pre><code>def dog(name:str, age:(1, 99), species:'狗狗的品种') -&gt; tuple:
+    return (name, age, species)
+</code></pre>
+
+<p>可写,查看这些注释可以通过自定义函数的特殊属性<strong><strong>annotations</strong></strong>获取,结果会以字典的形式返回：</p>
+<pre><code>dog.__annotations__
+# {'age': (1, 99), 'name': str, 'return': tuple, 'species': '狗狗的品种'}
+</code></pre>
+
+<h4 id="11-95_kwdefaults__">11. __kwdefaults__</h4>
+<p>可写，具体详见 “Python 的 Keyword-Only Arguments(强制关键字参数)”</p>
+<h4 id="_4">参考链接</h4>
+<p><a href="https://segmentfault.com/a/1190000005685090">自定义函数的特殊属性</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../code_slice/" class="btn btn-neutral float-right" title="code slice">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../断言和异常/" class="btn btn-neutral" title="断言和异常"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../断言和异常/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../code_slice/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>nas - pyv wiki</title>
+  <title>vunble - pyv wiki</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "nas";
-    var mkdocs_page_input_path = "nas\\nas.md";
+    var mkdocs_page_name = "vunble";
+    var mkdocs_page_input_path = "vim\\vunble.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,15 +79,9 @@
 		
     <span class="caption-text">NAS</span>
     <ul class="subnav">
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">nas</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#nas">NAS</a></li>
-    
-
-    </ul>
+    <a class="" href="../../nas/nas/">nas</a>
                 </li>
     </ul>
 	    </li>
@@ -98,11 +92,53 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../vim/vim code slice/">代码片段</a>
+    <a class="" href="../vim code slice/">代码片段</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../vim/vunble/">vunble</a>
+    <a class="current" href="./">vunble</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#vundle">安装vundle</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_1">配置说明：</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">插件有三种类型:</a></li>
+        
+            <li><a class="toctree-l4" href="#vundle_1">对于不同的插件，vundle自动管理和下载插件的时候，有不同的地址填写方法，有如下三类：</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#vundle_2">配置vundle插件：</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_3">安装需要的插件</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_4">保存之后，有两种方法安装插件。</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_5">移除不需要的插件</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_6">其他常用命令</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_7">更新插件</a></li>
+        
+            <li><a class="toctree-l4" href="#_8">列出所有插件</a></li>
+        
+            <li><a class="toctree-l4" href="#_9">查找插件</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -190,11 +226,11 @@
     
       
         
-          <li>NAS &raquo;</li>
+          <li>Vim &raquo;</li>
         
       
     
-    <li>nas</li>
+    <li>vunble</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -204,7 +240,97 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="nas">NAS</h1>
+                <h2 id="vundle">安装vundle</h2>
+<pre><code>$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+</code></pre>
+
+<p>默认安装在/.vim/bundle/vundle下；</p>
+<h2 id="_1">配置说明：</h2>
+<h3 id="_2">插件有三种类型:</h3>
+<ol>
+<li>Github上vim-scripts仓库的插件 </li>
+<li>Github上非vim-scripts仓库的插件 </li>
+<li>不在Github上的插件 </li>
+</ol>
+<h3 id="vundle_1">对于不同的插件，vundle自动管理和下载插件的时候，有不同的地址填写方法，有如下三类：</h3>
+<ol>
+<li>在Github上vim-scripts用户下的仓库,只需要写出repos（仓库）名称 </li>
+<li>在Github其他用户下的repos, 需要写出”用户名/repos名” </li>
+<li>不在Github上的插件，需要写出git全路径</li>
+</ol>
+<h2 id="vundle_2">配置vundle插件：</h2>
+<p>可以在终端通过vim打开~/.vimrc文件，</p>
+<p>添加的配置信息（样例） 
+注：以后安装新插件就直接编辑vimrc，添加plugin就行了</p>
+<pre><code>set nocompatible              &quot; 去除VI一致性,必须要添加
+filetype off                  &quot; 必须要添加
+
+&quot; 设置包括vundle和初始化相关的runtime path
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+&quot; 另一种选择, 指定一个vundle安装插件的路径
+&quot;call vundle#begin('~/some/path/here')
+
+&quot; 让vundle管理插件版本,必须
+Plugin 'VundleVim/Vundle.vim'
+
+&quot; 以下范例用来支持不同格式的插件安装.
+&quot; 请将安装插件的命令放在vundle#begin和vundle#end之间.
+&quot; Github上的插件
+&quot; 格式为 Plugin '用户名/插件仓库名'
+Plugin 'tpope/vim-fugitive'
+&quot; 来自 http://vim-scripts.org/vim/scripts.html 的插件
+&quot; Plugin '插件名称' 实际上是 Plugin 'vim-scripts/插件仓库名' 只是此处的用户名可以省略
+Plugin 'L9'
+&quot; 由Git支持但不再github上的插件仓库 Plugin 'git clone 后面的地址'
+Plugin 'git://git.wincent.com/command-t.git'
+&quot; 本地的Git仓库(例如自己的插件) Plugin 'file:///+本地插件仓库绝对路径'
+Plugin 'file:///home/gmarik/path/to/plugin'
+&quot; 插件在仓库的子目录中.
+&quot; 正确指定路径用以设置runtimepath. 以下范例插件在sparkup/vim目录下
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+&quot; 安装L9，如果已经安装过这个插件，可利用以下格式避免命名冲突
+Plugin 'ascenator/L9', {'name': 'newL9'}
+
+&quot; 你的所有插件需要在下面这行之前
+call vundle#end()            &quot; 必须
+filetype plugin indent on    &quot; 必须 加载vim自带和插件相应的语法和文件类型相关脚本
+&quot; 忽视插件改变缩进,可以使用以下替代:
+&quot;filetype plugin on
+&quot;
+&quot; 常用的命令
+&quot; :PluginList       - 列出所有已配置的插件
+&quot; :PluginInstall     - 安装插件,追加 `!` 用以更新或使用 :PluginUpdate
+&quot; :PluginSearch foo - 搜索 foo ; 追加 `!` 清除本地缓存
+&quot; :PluginClean      - 清除未使用插件,需要确认; 追加 `!` 自动批准移除未使用插件
+&quot;
+&quot; 查阅 :h vundle 获取更多细节和wiki以及FAQ
+&quot; 将你自己的非插件片段放在这行之后
+</code></pre>
+
+<h2 id="_3">安装需要的插件</h2>
+<p>将想要安装的插件，按照地址填写方法，将地址填写在vundle#begin和vundle#end之间就可以</p>
+<h2 id="_4">保存之后，有两种方法安装插件。</h2>
+<ol>
+<li>运行 vim ,再运行 :PluginInstall</li>
+<li>通过命令行直接安装 vim +PluginInstall +qall</li>
+</ol>
+<h2 id="_5">移除不需要的插件</h2>
+<p>编辑.vimrc文件移除的你要移除的插件所对应的plugin那一行。
+保存退出当前的vim
+重新打开vim，输入命令BundleClean</p>
+<h2 id="_6">其他常用命令</h2>
+<h3 id="_7">更新插件</h3>
+<pre><code>BundleUpdate
+</code></pre>
+
+<h3 id="_8">列出所有插件</h3>
+<pre><code>BundleList 
+</code></pre>
+
+<h3 id="_9">查找插件</h3>
+<pre><code>BundleSearch
+</code></pre>
               
             </div>
           </div>
@@ -212,10 +338,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../vim/vim code slice/" class="btn btn-neutral float-right" title="代码片段">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../vscode/vscode远程/" class="btn btn-neutral float-right" title="vscode访问修改远程文件">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../linux/后台运行/" class="btn btn-neutral" title="linux后台运行"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vim code slice/" class="btn btn-neutral" title="代码片段"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -241,10 +367,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../linux/后台运行/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../vim code slice/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../vim/vim code slice/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../vscode/vscode远程/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

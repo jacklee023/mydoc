@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>nas - pyv wiki</title>
+  <title>package - pyv wiki</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "nas";
-    var mkdocs_page_input_path = "nas\\nas.md";
+    var mkdocs_page_name = "package";
+    var mkdocs_page_input_path = "python\\package.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,15 +79,9 @@
 		
     <span class="caption-text">NAS</span>
     <ul class="subnav">
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">nas</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#nas">NAS</a></li>
-    
-
-    </ul>
+    <a class="" href="../../nas/nas/">nas</a>
                 </li>
     </ul>
 	    </li>
@@ -124,31 +118,59 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../python/断言和异常/">断言和异常</a>
+    <a class="" href="../断言和异常/">断言和异常</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../python/自定义函数的特殊属性/">自定义函数的特殊属性</a>
+    <a class="" href="../自定义函数的特殊属性/">自定义函数的特殊属性</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../python/code_slice/">code slice</a>
+    <a class="" href="../code_slice/">code slice</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">package</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#1-package">1 package</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#11-pickle">1.1 pickle</a></li>
+        
+            <li><a class="toctree-l4" href="#12-mccabd">1.2 mccabd</a></li>
+        
+            <li><a class="toctree-l4" href="#13-pyreverse">1.3 Pyreverse</a></li>
+        
+            <li><a class="toctree-l4" href="#14-mypy">1.4 mypy</a></li>
+        
+            <li><a class="toctree-l4" href="#15-clonedigger">1.5 Clonedigger</a></li>
+        
+            <li><a class="toctree-l4" href="#16-urwid">1.6 urwid</a></li>
+        
+            <li><a class="toctree-l4" href="#17-npyscreen">1.7 npyscreen</a></li>
+        
+            <li><a class="toctree-l4" href="#18-cpickle">1.8 cPickle</a></li>
+        
+            <li><a class="toctree-l4" href="#19-pipe">1.9 pipe</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../python/package/">package</a>
+    <a class="" href="../python const/">constant</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../python/python const/">constant</a>
+    <a class="" href="../pip/">pip镜像源</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../python/pip/">pip镜像源</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../python/python unittest/">python的unittest单元测试框架断言整理汇总</a>
+    <a class="" href="../python unittest/">python的unittest单元测试框架断言整理汇总</a>
                 </li>
     </ul>
 	    </li>
@@ -190,11 +212,11 @@
     
       
         
-          <li>NAS &raquo;</li>
+          <li>python &raquo;</li>
         
       
     
-    <li>nas</li>
+    <li>package</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -204,7 +226,81 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="nas">NAS</h1>
+                <h2 id="1-package">1 <strong>package</strong></h2>
+<p><a href="https://www.cnblogs.com/jinjiangongzuoshi/p/6596268.html">哪些 Python 库让你相见恨晚？【转】</a>
+<a href="https://www.zhihu.com/question/24590883">哪些 Python 库让你相见恨晚？</a></p>
+<h3 id="11-pickle">1.1 <strong>pickle</strong></h3>
+<h4 id="111-dump">1.1.1 <strong>dump的参数</strong></h4>
+<pre><code>pickle.dump(obj, file, protocol=None, *, fix_imports=True)
+</code></pre>
+
+<p>pickle.dump的protocol参数可以指定序列化模式，其中0表示文本文件，1以上表示二进制文件
+配合fix_imports参数可以使序列化文件可以兼容python2</p>
+<h3 id="12-mccabd">1.2 <strong>mccabd</strong></h3>
+<h4 id="121">1.2.1 <strong>介绍</strong></h4>
+<blockquote>
+<p>Cyclomatic Complexity 圈复杂度
+McCabe 是一种度量程序复杂度的方法，如果单个子程序复杂度过高，或许就需要拆分逻辑提高程序的易读性。</p>
+</blockquote>
+<ul>
+<li><a href="https://kinegratii.github.io/2018/04/08/cyclomatic-complexity-and-mccabe/">圈复杂度和McCabe</a></li>
+</ul>
+<h4 id="122">1.2.2 <strong>示例</strong></h4>
+<pre><code class="sh">&gt;&gt; pip install mccabe
+&gt;&gt; python -m mccabe factorial.py 
+&gt;&gt; python -m mccabe --min 5 mccabe.py
+&gt;&gt; python -m mccabe factorial.py -d  # 产生dot有向图 
+</code></pre>
+
+<ul>
+<li><a href="https://dreampuf.github.io/GraphvizOnline/">产生dot有向图</a></li>
+</ul>
+<h3 id="13-pyreverse">1.3 <strong>Pyreverse</strong></h3>
+<h4 id="131">1.3.1 <strong>介绍</strong></h4>
+<p>代码 UML 生成工具, 帮助我们理解继承关系 </p>
+<h4 id="132">1.3.2 <strong>示例</strong></h4>
+<p>安装成功但报错无法工作，可能是不支持python3</p>
+<blockquote>
+<p>TODO</p>
+</blockquote>
+<h3 id="14-mypy">1.4 <strong>mypy</strong></h3>
+<h4 id="141">1.4.1 <strong>介绍</strong></h4>
+<p>类型检查工具，结合 python3 的 type hint 或者 python2 中的类型注释可以做类型检查。</p>
+<h4 id="142">1.4.2 <strong>示例</strong></h4>
+<pre><code class="python">mypy ./demo.py
+</code></pre>
+
+<h4 id="143">1.4.3 <strong>参考</strong></h4>
+<ul>
+<li><a href="http://blog.lujun9972.win/blog/2018/03/12/%E4%BD%BF%E7%94%A8mypy%E5%AF%B9python%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E9%9D%99%E6%80%81%E6%A3%80%E6%9F%A5/">mypy使用</a></li>
+</ul>
+<h3 id="15-clonedigger">1.5 <strong>Clonedigger</strong></h3>
+<h4 id="151">1.5.1 <strong>介绍</strong></h4>
+<p>重复代码 </p>
+<pre><code class="sh">git clone https://github.com/jlachowski/clonedigger
+cd clonedigger
+python setup.py install
+</code></pre>
+
+<h4 id="152">1.5.2 <strong>示例</strong></h4>
+<blockquote>
+<p>TODO</p>
+</blockquote>
+<h4 id="153">1.5.3 <strong>参考</strong></h4>
+<p><a href="https://www.cnblogs.com/shenh/p/10412685.html">python ddt数据驱动（简化重复代码）</a></p>
+<h3 id="16-urwid">1.6 <strong>urwid</strong></h3>
+<h4 id="161">1.6.1 <strong>介绍</strong></h4>
+<p>urwid 不支持windows（fcntl无法安装），据说比较传统，感觉上跟QT比较像</p>
+<h4 id="162">1.6.2 <strong>参考</strong></h4>
+<ul>
+<li><a href="https://agave233.github.io/2018/03/11/%E6%B5%85%E8%B0%88%E7%94%A8urwid%E5%BA%93%E5%AE%9E%E7%8E%B0%E7%BB%88%E7%AB%AF%E7%9A%84GUI%E7%BC%96%E7%A8%8B/">浅谈用urwid库实现终端的GUI编程</a></li>
+<li><a href="http://urwid.org/index.html">urwid官网</a></li>
+</ul>
+<h3 id="17-npyscreen">1.7 <strong>npyscreen</strong></h3>
+<h4 id="171">1.7.1 <strong>介绍</strong></h4>
+<p>依赖curses库，该库在Windows下需要用whl按照，但官网提供的whl包没有python34版，无法解决</p>
+<h3 id="18-cpickle">1.8 <strong>cPickle</strong></h3>
+<h3 id="19-pipe">1.9 <strong>pipe</strong></h3>
               
             </div>
           </div>
@@ -212,10 +308,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../vim/vim code slice/" class="btn btn-neutral float-right" title="代码片段">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../python const/" class="btn btn-neutral float-right" title="constant">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../linux/后台运行/" class="btn btn-neutral" title="linux后台运行"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../code_slice/" class="btn btn-neutral" title="code slice"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -241,10 +337,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../linux/后台运行/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../code_slice/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../vim/vim code slice/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../python const/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

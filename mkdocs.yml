@@ -1,9 +1,30 @@
-site_name: My Docs
+site_name: pyv wiki
 theme: readthedocs
 
 pages:
-    - Linux: 'linux/linux.md'
-    - NAS: 'nas/nas.md'
-    - Vim: 'vim/vim.md'
-    - VSCode: 'vscode/vscode.md'
-    - python: 'python/python.md'
+    - Linux: 
+        # - linux: 'linux/linux.md'
+        - scp: 'linux/scp.md'
+        - awk: 'linux/awk.md'
+        - sed: 'linux/sed.md'
+        - sed单行命令合集: 'linux/sed-single-line-command.md'
+        - linux后台运行: 'linux/后台运行.md'
+
+    - NAS:
+        - nas: 'nas/nas.md'
+    - Vim: 
+        - 代码片段: 'vim/vim code slice.md'
+        - vunble: 'vim/vunble.md'
+    - VSCode: 
+        - vscode访问修改远程文件: 'vscode/vscode远程.md'
+    - python: 
+        - 断言和异常: 'python/断言和异常.md'
+        - 自定义函数的特殊属性: 'python/自定义函数的特殊属性.md'
+        - code slice: 'python/code_slice.md'
+        - package: 'python/package.md'
+        - constant: 'python/python const.md'
+        - pip镜像源: 'python/pip.md'
+        - python的unittest单元测试框架断言整理汇总: 'python/python unittest.md'
+    - 正则表达式: 
+        - 零宽断言: 'regexp/零宽断言.md'
+        - 成对括号: 'regexp/成对括号.md'
