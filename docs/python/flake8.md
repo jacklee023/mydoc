@@ -164,27 +164,27 @@ C411 | Unnecessary list call - remove the outer call to list().
 #### erc code
 Code | message
 -----|---------------------
-**B001** | Do not use bare ``except:``, it also catches unexpected events like memory errors, interrupts, system exit, and so on.  Prefer ``except Exception:``.  If you're sure what you're doing, be explicit and write ``except BaseException:``.  Disable E722 to avoid duplicate warnings.
-**B002** | Python does not support the unary prefix increment. Writing ``++n`` is equivalent to ``+(+(n))``, which equals ``n``. You meant ``n += 1``.
-**B003** | Assigning to ``os.environ`` doesn't clear the environment.  Subprocesses are going to see outdated variables, in disagreement with the current process.  Use ``os.environ.clear()`` or the ``env=``  argument to Popen.
-**B004** | Using ``hasattr(x, '__call__')`` to test if ``x`` is callable is unreliable.  If ``x`` implements custom ``__getattr__`` or its ``__call__`` is itself not callable, you might get misleading results.  Use ``callable(x)`` for consistent results.
-**B005** | Using ``.strip()`` with multi-character strings is misleading the reader. It looks like stripping a substring. Move your character set to a constant if this is deliberate. Use ``.replace()`` or regular expressions to remove string fragments.
-**B006** | Do not use mutable data structures for argument defaults.  All calls reuse one instance of that data structure, persisting changes between them.
-**B007** | Loop control variable not used within the loop body.  If this is intended, start the name with an underscore.
-**B008** | Do not perform calls in argument defaults.  The call is performed only once at function definition time.  All calls to your function will reuse the result of that definition-time call.  If this is intended, assign the function call to a module-level variable and use that variable as a default value.
-**B009** | Do not call ``getattr(x, 'attr')``, instead use normal property access: ``x.attr``. Missing a default to ``getattr`` will cause an ``AttributeError`` to be raised for non-existent properties. There is no additional safety in using ``getattr`` if you know the attribute name ahead of time.
-**B010** | Do not call ``setattr(x, 'attr', val)``, instead use normal property access: ``x.attr = val``. There is no additional safety in using ``setattr`` if you know the attribute name ahead of time.
-**B011** | Do not call `assert False` since `python -O` removes these calls. Instead callers should `raise AssertionError()`.
-**B301** | Python 3 does not include ``.iter*`` methods on dictionaries. The default behavior is to return iterables. Simply remove the ``iter`` prefix from the method.  For Python 2 compatibility, also prefer the Python 3 equivalent if you expect that the size of the dict to be small and bounded. The performance regression on Python 2 will be negligible and the code is going to be the clearest.  Alternatively, use ``six.iter*`` or ``future.utils.iter*``. 
-**B302** | Python 3 does not include ``.view*`` methods on dictionaries. The default behavior is to return viewables. Simply remove the ``view`` prefix from the method.  For Python 2 compatibility, also prefer the Python 3 equivalent if you expect that the size of the dict to be small and bounded. The performance regression on Python 2 will be negligible and the code is going to be the clearest.  Alternatively, use ``six.view*`` or ``future.utils.view*``. 
-**B303** | The ``__metaclass__`` attribute on a class definition does nothing on Python 3. Use ``class MyClass(BaseClass, metaclass=...)``. For Python 2 compatibility, use ``six.add_metaclass``. 
-**B304** | ``sys.maxint`` is not a thing on Python 3. Use ``sys.maxsize``. 
-**B305** | ``.next()`` is not a thing on Python 3. Use the ``next()`` builtin. For Python 2 compatibility, use ``six.next()``. 
-**B306** | ``BaseException.message`` has been deprecated as of Python 2.6 and is removed in Python 3. Use ``str(e)`` to access the user-readable message. Use ``e.args`` to access arguments passed to the exception. 
-**B901** | Using ``return x`` in a generator function used to be syntactically invalid in Python 2. In Python 3 ``return x`` can be used in a generator as a return value in conjunction with ``yield from``. Users coming from Python 2 may expect the old behavior which might lead to bugs.  Use native ``async def`` coroutines or mark intentional ``return x`` usage with ``# noqa`` on the same line. 
-**B902** | Invalid first argument used for method. Use ``self`` for instance methods, and ``cls`` for class methods (which includes ``__new__`` and ``__init_subclass__``) or instance methods of metaclasses (detected as classes directly inheriting from ``type``). 
-**B903** | Use ``collections.namedtuple`` (or ``typing.NamedTuple``) for data classes that only set attributes in an ``__init__`` method, and do nothing else. If the attributes should be mutable, define the attributes in ``__slots__`` to save per-instance memory and to prevent accidentally creating additional attributes on instances. 
-**B950** | Line too long. This is a pragmatic equivalent of ``pycodestyle``'s E501: it considers "max-line-length" but only triggers when the value has been exceeded by **more than 10%**. You will no longer be forced to reformat code due to the closing parenthesis being one character too far to satisfy the linter. At the same time, if you do significantly violate the line length, you will receive a message that states what the actual limit is. This is inspired by Raymond Hettinger's `"Beyond PEP 8" talk <https://www.youtube.com/watch?v=wf-BqAjZb8M>`_ and highway patrol not stopping you if you drive < 5mph too fast. Disable E501 to avoid duplicate warnings.
+B001 | Do not use bare ``except:``, it also catches unexpected events like memory errors, interrupts, system exit, and so on.  Prefer ``except Exception:``.  If you're sure what you're doing, be explicit and write ``except BaseException:``.  Disable E722 to avoid duplicate warnings.
+B002 | Python does not support the unary prefix increment. Writing ``++n`` is equivalent to ``+(+(n))``, which equals ``n``. You meant ``n += 1``.
+B003 | Assigning to ``os.environ`` doesn't clear the environment.  Subprocesses are going to see outdated variables, in disagreement with the current process.  Use ``os.environ.clear()`` or the ``env=``  argument to Popen.
+B004 | Using ``hasattr(x, '__call__')`` to test if ``x`` is callable is unreliable.  If ``x`` implements custom ``__getattr__`` or its ``__call__`` is itself not callable, you might get misleading results.  Use ``callable(x)`` for consistent results.
+B005 | Using ``.strip()`` with multi-character strings is misleading the reader. It looks like stripping a substring. Move your character set to a constant if this is deliberate. Use ``.replace()`` or regular expressions to remove string fragments.
+B006 | Do not use mutable data structures for argument defaults.  All calls reuse one instance of that data structure, persisting changes between them.
+B007 | Loop control variable not used within the loop body.  If this is intended, start the name with an underscore.
+B008 | Do not perform calls in argument defaults.  The call is performed only once at function definition time.  All calls to your function will reuse the result of that definition-time call.  If this is intended, assign the function call to a module-level variable and use that variable as a default value.
+B009 | Do not call ``getattr(x, 'attr')``, instead use normal property access: ``x.attr``. Missing a default to ``getattr`` will cause an ``AttributeError`` to be raised for non-existent properties. There is no additional safety in using ``getattr`` if you know the attribute name ahead of time.
+B010 | Do not call ``setattr(x, 'attr', val)``, instead use normal property access: ``x.attr = val``. There is no additional safety in using ``setattr`` if you know the attribute name ahead of time.
+B011 | Do not call `assert False` since `python -O` removes these calls. Instead callers should `raise AssertionError()`.
+B301 | Python 3 does not include ``.iter*`` methods on dictionaries. The default behavior is to return iterables. Simply remove the ``iter`` prefix from the method.  For Python 2 compatibility, also prefer the Python 3 equivalent if you expect that the size of the dict to be small and bounded. The performance regression on Python 2 will be negligible and the code is going to be the clearest.  Alternatively, use ``six.iter*`` or ``future.utils.iter*``. 
+B302 | Python 3 does not include ``.view*`` methods on dictionaries. The default behavior is to return viewables. Simply remove the ``view`` prefix from the method.  For Python 2 compatibility, also prefer the Python 3 equivalent if you expect that the size of the dict to be small and bounded. The performance regression on Python 2 will be negligible and the code is going to be the clearest.  Alternatively, use ``six.view*`` or ``future.utils.view*``. 
+B303 | The ``__metaclass__`` attribute on a class definition does nothing on Python 3. Use ``class MyClass(BaseClass, metaclass=...)``. For Python 2 compatibility, use ``six.add_metaclass``. 
+B304 | ``sys.maxint`` is not a thing on Python 3. Use ``sys.maxsize``. 
+B305 | ``.next()`` is not a thing on Python 3. Use the ``next()`` builtin. For Python 2 compatibility, use ``six.next()``. 
+B306 | ``BaseException.message`` has been deprecated as of Python 2.6 and is removed in Python 3. Use ``str(e)`` to access the user-readable message. Use ``e.args`` to access arguments passed to the exception. 
+B901 | Using ``return x`` in a generator function used to be syntactically invalid in Python 2. In Python 3 ``return x`` can be used in a generator as a return value in conjunction with ``yield from``. Users coming from Python 2 may expect the old behavior which might lead to bugs.  Use native ``async def`` coroutines or mark intentional ``return x`` usage with ``# noqa`` on the same line. 
+B902 | Invalid first argument used for method. Use ``self`` for instance methods, and ``cls`` for class methods (which includes ``__new__`` and ``__init_subclass__``) or instance methods of metaclasses (detected as classes directly inheriting from ``type``). 
+B903 | Use ``collections.namedtuple`` (or ``typing.NamedTuple``) for data classes that only set attributes in an ``__init__`` method, and do nothing else. If the attributes should be mutable, define the attributes in ``__slots__`` to save per-instance memory and to prevent accidentally creating additional attributes on instances. 
+B950 | Line too long. This is a pragmatic equivalent of ``pycodestyle``'s E501: it considers "max-line-length" but only triggers when the value has been exceeded by **more than 10%**. You will no longer be forced to reformat code due to the closing parenthesis being one character too far to satisfy the linter. At the same time, if you do significantly violate the line length, you will receive a message that states what the actual limit is. This is inspired by Raymond Hettinger's `"Beyond PEP 8" talk <https://www.youtube.com/watch?v=wf-BqAjZb8M>`_ and highway patrol not stopping you if you drive < 5mph too fast. Disable E501 to avoid duplicate warnings.
 
 ### [flake8-spellcheck](https://github.com/MichaelAquilina/flake8-spellcheck)
 #### introduce
@@ -209,6 +209,7 @@ I100 | Your import statements are in the wrong order.
 I101 | The names in your from import are in the wrong order.
 I201 | Missing newline between import groups.
 I202 | Additional newline in a group of imports.
+
 #### [Styles](https://github.com/PyCQA/flake8-import-order#styles)
 The following styles are directly supported,
 
@@ -247,6 +248,7 @@ Code | message
 A500 | prefer {func} for '{op}' comparisons
 A501 | prefer {func} for '{op}' expressions
 A502 | prefer {func} instead of comparing to {obj}
+
 #### configuration
 - assertive-snakecase: suggest snake_case assert method names (e.g. assert_true()) instead of the standard names (e.g. assertTrue())
 - assertive-test-pattern: fnmatch pattern for identifying unittest test files (and all other files will be skipped)
@@ -319,7 +321,7 @@ TODO
 #### erc code
 TODO
 
-### [flake8-per-file-ignores](https://github.com/snoack/flake8-per-file-ignores
+### [flake8-per-file-ignores](https://github.com/snoack/flake8-per-file-ignores)
 #### introduce
 #### install
 `pip install flake8-per-file-ignores`

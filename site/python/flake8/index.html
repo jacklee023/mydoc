@@ -209,7 +209,7 @@
         
             <li><a class="toctree-l4" href="#flake8-putty">flake8-putty</a></li>
         
-            <li><a class="toctree-l4" href="#flake8-per-file-ignoreshttpsgithubcomsnoackflake8-per-file-ignores">[flake8-per-file-ignores](https://github.com/snoack/flake8-per-file-ignores</a></li>
+            <li><a class="toctree-l4" href="#flake8-per-file-ignores">flake8-per-file-ignores</a></li>
         
         </ul>
     
@@ -571,87 +571,87 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>B001</strong></td>
+<td>B001</td>
 <td>Do not use bare <code>except:</code>, it also catches unexpected events like memory errors, interrupts, system exit, and so on.  Prefer <code>except Exception:</code>.  If you&rsquo;re sure what you&rsquo;re doing, be explicit and write <code>except BaseException:</code>.  Disable E722 to avoid duplicate warnings.</td>
 </tr>
 <tr>
-<td><strong>B002</strong></td>
+<td>B002</td>
 <td>Python does not support the unary prefix increment. Writing <code>++n</code> is equivalent to <code>+(+(n))</code>, which equals <code>n</code>. You meant <code>n += 1</code>.</td>
 </tr>
 <tr>
-<td><strong>B003</strong></td>
+<td>B003</td>
 <td>Assigning to <code>os.environ</code> doesn&rsquo;t clear the environment.  Subprocesses are going to see outdated variables, in disagreement with the current process.  Use <code>os.environ.clear()</code> or the <code>env=</code>  argument to Popen.</td>
 </tr>
 <tr>
-<td><strong>B004</strong></td>
+<td>B004</td>
 <td>Using <code>hasattr(x, '__call__')</code> to test if <code>x</code> is callable is unreliable.  If <code>x</code> implements custom <code>__getattr__</code> or its <code>__call__</code> is itself not callable, you might get misleading results.  Use <code>callable(x)</code> for consistent results.</td>
 </tr>
 <tr>
-<td><strong>B005</strong></td>
+<td>B005</td>
 <td>Using <code>.strip()</code> with multi-character strings is misleading the reader. It looks like stripping a substring. Move your character set to a constant if this is deliberate. Use <code>.replace()</code> or regular expressions to remove string fragments.</td>
 </tr>
 <tr>
-<td><strong>B006</strong></td>
+<td>B006</td>
 <td>Do not use mutable data structures for argument defaults.  All calls reuse one instance of that data structure, persisting changes between them.</td>
 </tr>
 <tr>
-<td><strong>B007</strong></td>
+<td>B007</td>
 <td>Loop control variable not used within the loop body.  If this is intended, start the name with an underscore.</td>
 </tr>
 <tr>
-<td><strong>B008</strong></td>
+<td>B008</td>
 <td>Do not perform calls in argument defaults.  The call is performed only once at function definition time.  All calls to your function will reuse the result of that definition-time call.  If this is intended, assign the function call to a module-level variable and use that variable as a default value.</td>
 </tr>
 <tr>
-<td><strong>B009</strong></td>
+<td>B009</td>
 <td>Do not call <code>getattr(x, 'attr')</code>, instead use normal property access: <code>x.attr</code>. Missing a default to <code>getattr</code> will cause an <code>AttributeError</code> to be raised for non-existent properties. There is no additional safety in using <code>getattr</code> if you know the attribute name ahead of time.</td>
 </tr>
 <tr>
-<td><strong>B010</strong></td>
+<td>B010</td>
 <td>Do not call <code>setattr(x, 'attr', val)</code>, instead use normal property access: <code>x.attr = val</code>. There is no additional safety in using <code>setattr</code> if you know the attribute name ahead of time.</td>
 </tr>
 <tr>
-<td><strong>B011</strong></td>
+<td>B011</td>
 <td>Do not call <code>assert False</code> since <code>python -O</code> removes these calls. Instead callers should <code>raise AssertionError()</code>.</td>
 </tr>
 <tr>
-<td><strong>B301</strong></td>
+<td>B301</td>
 <td>Python 3 does not include <code>.iter*</code> methods on dictionaries. The default behavior is to return iterables. Simply remove the <code>iter</code> prefix from the method.  For Python 2 compatibility, also prefer the Python 3 equivalent if you expect that the size of the dict to be small and bounded. The performance regression on Python 2 will be negligible and the code is going to be the clearest.  Alternatively, use <code>six.iter*</code> or <code>future.utils.iter*</code>.</td>
 </tr>
 <tr>
-<td><strong>B302</strong></td>
+<td>B302</td>
 <td>Python 3 does not include <code>.view*</code> methods on dictionaries. The default behavior is to return viewables. Simply remove the <code>view</code> prefix from the method.  For Python 2 compatibility, also prefer the Python 3 equivalent if you expect that the size of the dict to be small and bounded. The performance regression on Python 2 will be negligible and the code is going to be the clearest.  Alternatively, use <code>six.view*</code> or <code>future.utils.view*</code>.</td>
 </tr>
 <tr>
-<td><strong>B303</strong></td>
+<td>B303</td>
 <td>The <code>__metaclass__</code> attribute on a class definition does nothing on Python 3. Use <code>class MyClass(BaseClass, metaclass=...)</code>. For Python 2 compatibility, use <code>six.add_metaclass</code>.</td>
 </tr>
 <tr>
-<td><strong>B304</strong></td>
+<td>B304</td>
 <td><code>sys.maxint</code> is not a thing on Python 3. Use <code>sys.maxsize</code>.</td>
 </tr>
 <tr>
-<td><strong>B305</strong></td>
+<td>B305</td>
 <td><code>.next()</code> is not a thing on Python 3. Use the <code>next()</code> builtin. For Python 2 compatibility, use <code>six.next()</code>.</td>
 </tr>
 <tr>
-<td><strong>B306</strong></td>
+<td>B306</td>
 <td><code>BaseException.message</code> has been deprecated as of Python 2.6 and is removed in Python 3. Use <code>str(e)</code> to access the user-readable message. Use <code>e.args</code> to access arguments passed to the exception.</td>
 </tr>
 <tr>
-<td><strong>B901</strong></td>
+<td>B901</td>
 <td>Using <code>return x</code> in a generator function used to be syntactically invalid in Python 2. In Python 3 <code>return x</code> can be used in a generator as a return value in conjunction with <code>yield from</code>. Users coming from Python 2 may expect the old behavior which might lead to bugs.  Use native <code>async def</code> coroutines or mark intentional <code>return x</code> usage with <code># noqa</code> on the same line.</td>
 </tr>
 <tr>
-<td><strong>B902</strong></td>
+<td>B902</td>
 <td>Invalid first argument used for method. Use <code>self</code> for instance methods, and <code>cls</code> for class methods (which includes <code>__new__</code> and <code>__init_subclass__</code>) or instance methods of metaclasses (detected as classes directly inheriting from <code>type</code>).</td>
 </tr>
 <tr>
-<td><strong>B903</strong></td>
+<td>B903</td>
 <td>Use <code>collections.namedtuple</code> (or <code>typing.NamedTuple</code>) for data classes that only set attributes in an <code>__init__</code> method, and do nothing else. If the attributes should be mutable, define the attributes in <code>__slots__</code> to save per-instance memory and to prevent accidentally creating additional attributes on instances.</td>
 </tr>
 <tr>
-<td><strong>B950</strong></td>
+<td>B950</td>
 <td>Line too long. This is a pragmatic equivalent of <code>pycodestyle</code>&lsquo;s E501: it considers &ldquo;max-line-length&rdquo; but only triggers when the value has been exceeded by <strong>more than 10%</strong>. You will no longer be forced to reformat code due to the closing parenthesis being one character too far to satisfy the linter. At the same time, if you do significantly violate the line length, you will receive a message that states what the actual limit is. This is inspired by Raymond Hettinger&rsquo;s <code>"Beyond PEP 8" talk &lt;https://www.youtube.com/watch?v=wf-BqAjZb8M&gt;</code>_ and highway patrol not stopping you if you drive &lt; 5mph too fast. Disable E501 to avoid duplicate warnings.</td>
 </tr>
 </tbody>
@@ -710,16 +710,10 @@
 <td>I202</td>
 <td>Additional newline in a group of imports.</td>
 </tr>
-<tr>
-<td>#### <a href="https://github.com/PyCQA/flake8-import-order#styles">Styles</a></td>
-<td></td>
-</tr>
-<tr>
-<td>The following styles are directly supported,</td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<h4 id="styles"><a href="https://github.com/PyCQA/flake8-import-order#styles">Styles</a><a class="headerlink" href="#styles" title="Permanent link">&para;</a></h4>
+<p>The following styles are directly supported,</p>
 <ul>
 <li>cryptography</li>
 <li>google</li>
@@ -766,20 +760,13 @@
 <td>A502</td>
 <td>prefer {func} instead of comparing to {obj}</td>
 </tr>
-<tr>
-<td>#### configuration</td>
-<td></td>
-</tr>
-<tr>
-<td>- assertive-snakecase: suggest snake_case assert method names (e.g. assert_true()) instead of the standard names (e.g. assertTrue())</td>
-<td></td>
-</tr>
-<tr>
-<td>- assertive-test-pattern: fnmatch pattern for identifying unittest test files (and all other files will be skipped)</td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<h4 id="configuration">configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h4>
+<ul>
+<li>assertive-snakecase: suggest snake_case assert method names (e.g. assert_true()) instead of the standard names (e.g. assertTrue())</li>
+<li>assertive-test-pattern: fnmatch pattern for identifying unittest test files (and all other files will be skipped)</li>
+</ul>
 <h3 id="flake8-string-format"><a href="https://github.com/xZise/flake8-string-format">flake8-string-format</a><a class="headerlink" href="#flake8-string-format" title="Permanent link">&para;</a></h3>
 <h4 id="introduce_12">introduce<a class="headerlink" href="#introduce_12" title="Permanent link">&para;</a></h4>
 <h4 id="install_13">install<a class="headerlink" href="#install_13" title="Permanent link">&para;</a></h4>
@@ -926,7 +913,7 @@ TODO</p>
 <p><code>pip install flake8-putty</code></p>
 <h4 id="erc-code_16">erc code<a class="headerlink" href="#erc-code_16" title="Permanent link">&para;</a></h4>
 <p>TODO</p>
-<h3 id="flake8-per-file-ignoreshttpsgithubcomsnoackflake8-per-file-ignores">[flake8-per-file-ignores](https://github.com/snoack/flake8-per-file-ignores<a class="headerlink" href="#flake8-per-file-ignoreshttpsgithubcomsnoackflake8-per-file-ignores" title="Permanent link">&para;</a></h3>
+<h3 id="flake8-per-file-ignores"><a href="https://github.com/snoack/flake8-per-file-ignores">flake8-per-file-ignores</a><a class="headerlink" href="#flake8-per-file-ignores" title="Permanent link">&para;</a></h3>
 <h4 id="introduce_16">introduce<a class="headerlink" href="#introduce_16" title="Permanent link">&para;</a></h4>
 <h4 id="install_17">install<a class="headerlink" href="#install_17" title="Permanent link">&para;</a></h4>
 <p><code>pip install flake8-per-file-ignores</code></p>
