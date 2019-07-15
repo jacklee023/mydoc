@@ -2,7 +2,7 @@
 
 ### 插件
 
-- [ ] 安装[flake8插件](https://github.com/DmytroLitvinov/awesome-flake8-extensions)
+安装[flake8插件](https://github.com/DmytroLitvinov/awesome-flake8-extensions)
 
 ### [PEP8-Naming](https://github.com/PyCQA/pep8-naming)
 
