@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>awk - pyv wiki</title>
+  <title>frp - pyv wiki</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "awk";
-    var mkdocs_page_input_path = "linux\\awk.md";
+    var mkdocs_page_name = "frp";
+    var mkdocs_page_input_path = "nas\\frp.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -54,34 +54,31 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../scp/">scp</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">awk</a>
-    <ul class="subnav">
-            
-    </ul>
+    <a class="" href="../../linux/scp/">scp</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../sed/">sed</a>
+    <a class="" href="../../linux/awk/">awk</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../sed-single-line-command/">sed单行命令合集</a>
+    <a class="" href="../../linux/sed/">sed</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../后台运行/">linux后台运行</a>
+    <a class="" href="../../linux/sed-single-line-command/">sed单行命令合集</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../tmux/">tmux</a>
+    <a class="" href="../../linux/后台运行/">linux后台运行</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../git/">git</a>
+    <a class="" href="../../linux/tmux/">tmux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/git/">git</a>
                 </li>
     </ul>
 	    </li>
@@ -92,15 +89,27 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../nas/nas/">nas</a>
+    <a class="" href="../nas/">nas</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../nas/ipkg/">ipkg</a>
+    <a class="" href="../ipkg/">ipkg</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../nas/frp/">frp</a>
+    <a class="current" href="./">frp</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#frp">frp 内网穿透配置</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_1">服务器端配置：</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_2">客户端配置</a></li>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -226,11 +235,11 @@
     
       
         
-          <li>Linux &raquo;</li>
+          <li>NAS &raquo;</li>
         
       
     
-    <li>awk</li>
+    <li>frp</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -240,184 +249,102 @@
           <div role="main">
             <div class="section">
               
-                <table>
-<thead>
-<tr>
-<th>awk变量</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$0</td>
-<td>当前记录（这个变量中存放着整个行的内容）</td>
-</tr>
-<tr>
-<td>$1~$n</td>
-<td>当前记录的第n个字段，字段间由FS分隔</td>
-</tr>
-<tr>
-<td>FS</td>
-<td>输入字段分隔符 默认是空格或Tab</td>
-</tr>
-<tr>
-<td>NF</td>
-<td>当前记录中的字段个数，就是有多少列</td>
-</tr>
-<tr>
-<td>NR</td>
-<td>已经读出的记录数，就是行号，从1开始，如果有多个文件话，这个值也是不断累加中</td>
-</tr>
-<tr>
-<td>FNR</td>
-<td>当前记录数，与NR不同的是，这个值会是各个文件自己的行号</td>
-</tr>
-<tr>
-<td>RS</td>
-<td>输入的记录分隔符， 默认为换行符</td>
-</tr>
-<tr>
-<td>OFS</td>
-<td>输出字段分隔符， 默认也是空格</td>
-</tr>
-<tr>
-<td>ORS</td>
-<td>输出的记录分隔符，默认为换行符</td>
-</tr>
-<tr>
-<td>FILENAME</td>
-<td>当前输入文件的名字</td>
-</tr>
-</tbody>
-</table>
-<pre><code>&gt;   netstat &gt; netstat.txt
-$ awk '{print $1, $4}' netstat.txt
-$ awk '{printf &quot;%-8s %-8s %-8s %-18s %-22s %-15s\n&quot;,$1,$2,$3,$4,$5,$6}' netstat.txt
-$ awk '$3==0 &amp;&amp; $6==&quot;LISTEN&quot; ' netstat.txt
+                <h1 id="frp">frp 内网穿透配置<a class="headerlink" href="#frp" title="Permanent link">&para;</a></h1>
+<p><a href="https://github.com/fatedier/frp">官方说明</a></p>
+<h1 id="_1">服务器端配置：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ol>
+<li>登录服务器，在 Release页面 下载自己服务器对应版本 Frp</li>
+</ol>
+<pre><code>wget https://github.com/fatedier/frp/releases/download/v0.12.0/frp_0.12.0_linux_amd64.tar.gz
 </code></pre>
 
 <ol>
-<li>指定分隔符</li>
+<li>使用 tar 指令解压 tar.gz 文件</li>
 </ol>
-<pre><code>awk  'BEGIN{FS=&quot;:&quot;} {print $1,$3,$6}' /etc/passwd
-</code></pre>
-
-<p>等价于</p>
-<pre><code>awk  -F: '{print $1,$3,$6}' /etc/passwd
+<pre><code>tar -zxvf frp_0.12.0_linux_amd64.tar.gz
 </code></pre>
 
 <ol>
-<li>多个分隔符</li>
+<li>进入 frp 目录</li>
 </ol>
-<pre><code>awk -F '[;:]'
+<pre><code>cd frp_0.12.0_linux_amd64
 </code></pre>
 
 <ol>
-<li>分隔符输出</li>
+<li>删除不必要的客户端文件</li>
 </ol>
-<pre><code>$ awk  -F: '{print $1,$3,$6}' OFS=&quot;\t&quot; /etc/passwd
+<pre><code>rm -f frpc frpc_full.ini frpc.ini
+</code></pre>
+
+<blockquote>
+<p>版本不同可能稍有差异 <br />
+frpc 为客户端文件<br />
+frps 为服务器端文件</p>
+</blockquote>
+<ol>
+<li>配置服务器端文件</li>
+</ol>
+<pre><code>[common]
+bind_port = 7000
+vhost_https_port = 8081
+vhost_http_port = 8080
 </code></pre>
 
 <ol>
-<li>字符串匹配</li>
+<li>后台运行frpc</li>
 </ol>
-<pre><code>awk '$6 ~ /FIN/ || NR==1 {print NR,$4,$5,$6}' OFS=&quot;\t&quot; netstat.txt
-awk '$6 ~ /WAIT/ || NR==1 {print NR,$4,$5,$6}' OFS=&quot;\t&quot; netstat.txt
-#sed风格匹配
-awk '/LISTEN/' netstat.txt
-#复杂模式匹配
-awk '$6 ~ /FIN|TIME/ || NR==1 {print NR,$4,$5,$6}' OFS=&quot;\t&quot; netstat.txt
-#模式取反
-awk '$6 !~ /WAIT/ || NR==1 {print NR,$4,$5,$6}' OFS=&quot;\t&quot; netstat.txt
-awk '!/WAIT/' netstat.txt
+<pre><code>nohup ./frps -c frps.ini  &amp;
+</code></pre>
+
+<h1 id="_2">客户端配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<ol>
+<li>SSH 登录群晖 NAS （群晖必须开启 ssh）</li>
+<li>下载 Frp, 删除服务端文件。（因为和服务端配置一样，不再一一赘述。）</li>
+</ol>
+<pre><code>sudo -i // 切换 root 用户
+wget https://github.com/fatedier/frp/releases/download/v0.12.0/frp_0.12.0_linux_386.tar.gz 
+tar -zxvf  frp_0.12.0_linux_386.tar.gz
+cd frp_0.12.0_linux_386
+rm -f frps frps_full.ini frps.ini
 </code></pre>
 
 <ol>
-<li>拆分文件</li>
+<li>编辑 frpc.ini 文件（客户端配置文件）</li>
 </ol>
-<pre><code>#按第六列拆分文件，NR!=1表示不处理表头
-awk 'NR!=1{print &gt; $6}' netstat.txt
-#按指定列输出
-awk 'NR!=1{print $4,$5 &gt; $6}' netstat.txt
-#更复杂的例子
-awk 'NR!=1{if($6 ~ /TIME|ESTABLISHED/) print &gt; &quot;1.txt&quot;;
-else if($6 ~ /LISTEN/) print &gt; &quot;2.txt&quot;;
-else print &gt; &quot;3.txt&quot; }' netstat.txt
+<pre><code>[common]
+server_addr = 118.24.102.42
+server_port = 7000
+
+[ssh]
+type = tcp
+local_ip = 192.168.1.8
+local_port = 42
+remote_port = 6000
+
+[web]
+type = https
+local_port = 501
+remote_port = 8081
+privilege_mode = true
+custom_domains = www.pyvlyf.club
+
+[http]
+type = http
+local_port = 500
+remote_port = 8080
+privilege_mode = true
+custom_domains = www.pyvlyf.club
 </code></pre>
 
-<ol>
-<li>统计</li>
-</ol>
-<pre><code>#计算所有的C文件，CPP文件和H文件的文件大小总和。
-ls -l  *.cpp *.c *.h | awk '{sum+=$5} END {print sum}'
-#统计各个connection状态
-awk 'NR!=1{a[$6]++;} END {for (i in a) print i &quot;, &quot; a[i];}' netstat.txt
-#统计每个用户的进程占了多少内存
-ps aux | awk 'NR!=1{a[$1]+=$6;} END { for(i in a) print i &quot;, &quot; a[i]&quot;KB&quot;;}'
+<p>4.后台运行frps</p>
+<pre><code>#!/bin/sh
+nohup frpc -c frpc.ini &amp;
 </code></pre>
 
-<ol>
-<li>awk脚本</li>
-</ol>
-<pre><code>#范例文件
-cat score.txt
-Marry   2143 78 84 77
-Jack    2321 66 78 45
-Tom     2122 48 77 71
-Mike    2537 87 97 95
-Bob     2415 40 57 62
+<p>5.设置NAS 开机自动启动frp</p>
+<!-- ![image](https://raw.githubusercontent.com/PhoYttVan/Image-Hosting-/master/frp%20boot%20nas%20setting.png) -->
 
-#awk脚本
-$ cat cal.awk
-#!/bin/awk -f
-#运行前
-BEGIN {
-    math = 0
-    english = 0
-    computer = 0
-
-    printf &quot;NAME    NO.   MATH  ENGLISH  COMPUTER   TOTAL\n&quot;
-    printf &quot;---------------------------------------------\n&quot;
-}
-#运行中
-{
-    math+=$3
-    english+=$4
-    computer+=$5
-    printf &quot;%-6s %-6s %4d %8d %8d %8d\n&quot;, $1, $2, $3,$4,$5, $3+$4+$5
-}
-#运行后
-END {
-    printf &quot;---------------------------------------------\n&quot;
-    printf &quot;  TOTAL:%10d %8d %8d \n&quot;, math, english, computer
-    printf &quot;AVERAGE:%10.2f %8.2f %8.2f\n&quot;, math/NR, english/NR, computer/NR
-}
-</code></pre>
-
-<p>执行：</p>
-<pre><code>awk -f cal.awk score.txt
-#或
-./cal.awk score.txt
-</code></pre>
-
-<ol>
-<li>环境变量 通过-v参数</li>
-</ol>
-<pre><code> awk -v val=$x '{print $1, $2, $3, $4+val, $5+ENVIRON[&quot;y&quot;]}' OFS=&quot;\t&quot; score.txt
-</code></pre>
-
-<ol>
-<li>几个例子</li>
-</ol>
-<pre><code>#从file文件中找出长度大于80的行
-awk 'length&gt;80' file
-
-#按连接数查看客户端IP
-netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr
-
-#打印99乘法表
-seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i&lt;=NF;i++)printf(&quot;%dx%d=%d%s&quot;, i, NR, i*NR, i==NR?&quot;\n&quot;:&quot;\t&quot;)}'
-</code></pre>
+<p><img alt="image" src="../pic/frp%20boot%20nas%20setting.png" /></p>
               
             </div>
           </div>
@@ -425,10 +352,10 @@ seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i&lt;=NF;i++)printf(&quot;%dx%d=%d%s&
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sed/" class="btn btn-neutral float-right" title="sed">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../vim/vim code slice/" class="btn btn-neutral float-right" title="代码片段">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../scp/" class="btn btn-neutral" title="scp"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ipkg/" class="btn btn-neutral" title="ipkg"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -454,10 +381,10 @@ seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i&lt;=NF;i++)printf(&quot;%dx%d=%d%s&
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../scp/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../ipkg/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../sed/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../vim/vim code slice/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

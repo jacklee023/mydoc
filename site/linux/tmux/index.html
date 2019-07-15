@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>tmux - pyv wiki</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "tmux";
+    var mkdocs_page_input_path = "linux\\tmux.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> pyv wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Linux</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../scp/">scp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../awk/">awk</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sed/">sed</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sed-single-line-command/">sed单行命令合集</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../后台运行/">linux后台运行</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">tmux</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#tmux">Tmux 快捷键 &amp; 速查表</a></li>
+    
+
+    <li class="toctree-l3"><a href="#tmux_1">在 Tmux 中</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">会话</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">窗口 (标签页)</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">调整窗口排序</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">窗格（分割窗口）</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">同步窗格</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">调整窗格尺寸</a></li>
+        
+            <li><a class="toctree-l4" href="#_7">文本复制模式：</a></li>
+        
+            <li><a class="toctree-l4" href="#_8">杂项：</a></li>
+        
+            <li><a class="toctree-l4" href="#_9">配置选项：</a></li>
+        
+            <li><a class="toctree-l4" href="#tmuxconf">配置文件（~/.tmux.conf）：</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../git/">git</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">NAS</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../nas/nas/">nas</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/ipkg/">ipkg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/frp/">frp</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Vim</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../vim/vim code slice/">代码片段</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/vunble/">vunble</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/powershell-vim/">在PowerShell中使用Vim</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">VSCode</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../vscode/vscode远程/">vscode访问修改远程文件</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">python</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../python/断言和异常/">断言和异常</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/自定义函数的特殊属性/">自定义函数的特殊属性</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/code_slice/">code slice</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/package/">package</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/python const/">constant</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/pip/">pip镜像源</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/python unittest/">python的unittest单元测试框架断言整理汇总</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/flake8/">flake8</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">perl</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../perl/基本语法/">基本语法</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">正则表达式</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../regexp/零宽断言/">零宽断言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/成对括号/">成对括号</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/常用正则/">常用正则</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">pyv wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Linux &raquo;</li>
+        
+      
+    
+    <li>tmux</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="tmux">Tmux 快捷键 &amp; 速查表<a class="headerlink" href="#tmux" title="Permanent link">&para;</a></h1>
+<p>启动新会话：</p>
+<pre><code>tmux [new -s 会话名 -n 窗口名]
+</code></pre>
+<p>恢复会话：</p>
+<pre><code>tmux at [-t 会话名]
+</code></pre>
+<p>列出所有会话：</p>
+<pre><code>tmux ls
+</code></pre>
+<p>关闭会话：</p>
+<pre><code>tmux kill-session -t 会话名
+</code></pre>
+<p>关闭所有会话：</p>
+<pre><code>tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+</code></pre>
+<h1 id="tmux_1">在 Tmux 中<a class="headerlink" href="#tmux_1" title="Permanent link">&para;</a></h1>
+<p>按下 Tmux 前缀 <code>ctrl+x</code>，然后：</p>
+<h2 id="_1">会话<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<pre><code>:new&lt;回车&gt;  启动新会话
+s           列出所有会话
+$           重命名当前会话
+d           断开当前会话(tmux detach)
+</code></pre>
+<h2 id="_2">窗口 (标签页)<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<pre><code>c  创建新窗口
+w  列出所有窗口
+n  后一个窗口
+p  前一个窗口
+f  查找窗口
+,  重命名当前窗口
+&amp;  关闭当前窗口
+</code></pre>
+<h2 id="_3">调整窗口排序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<pre><code>swap-window -s 3 -t 1  交换 3 号和 1 号窗口
+swap-window -t 1       交换当前和 1 号窗口
+move-window -t 1       移动当前窗口到 1 号
+</code></pre>
+<h2 id="_4">窗格（分割窗口）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<pre><code>%  垂直分割
+"  水平分割
+o  交换窗格
+x  关闭窗格
+⍽  左边这个符号代表空格键 - 切换布局
+q 显示每个窗格是第几个，当数字出现的时候按数字几就选中第几个窗格
+{ 与上一个窗格交换位置
+} 与下一个窗格交换位置
+z 切换窗格最大化/最小化
+</code></pre>
+<h2 id="_5">同步窗格<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>这么做可以切换到想要的窗口，输入 Tmux 前缀和一个冒号呼出命令提示行，然后输入：</p>
+<pre><code>:setw synchronize-panes
+</code></pre>
+
+<p>你可以指定开或关，否则重复执行命令会在两者间切换。
+这个选项值针对某个窗口有效，不会影响别的会话和窗口。
+完事儿之后再次执行命令来关闭。<a href="http://blog.sanctum.geek.nz/sync-tmux-panes/">帮助</a></p>
+<h2 id="_6">调整窗格尺寸<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>如果你不喜欢默认布局，可以重调窗格的尺寸。虽然这很容易实现，但一般不需要这么干。这几个命令用来调整窗格：</p>
+<pre><code>PREFIX : resize-pane -D          当前窗格向下扩大 1 格
+PREFIX : resize-pane -U          当前窗格向上扩大 1 格
+PREFIX : resize-pane -L          当前窗格向左扩大 1 格
+PREFIX : resize-pane -R          当前窗格向右扩大 1 格
+PREFIX : resize-pane -D 20       当前窗格向下扩大 20 格
+PREFIX : resize-pane -t 2 -L 20  编号为 2 的窗格向左扩大 20 格
+</code></pre>
+<h2 id="_7">文本复制模式：<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>按下<strong>前缀 [</strong>进入文本复制模式。可以使用方向键在屏幕中移动光标。默认情况下，方向键是启用的。在配置文件中启用 Vim 键盘布局来切换窗口、调整窗格大小。Tmux 也支持 Vi 模式。要是想启用 Vi 模式，只需要把下面这一行添加到 .tmux.conf 中：</p>
+<pre><code>setw -g mode-keys vi
+</code></pre>
+<p>启用这条配置后，就可以使用 h、j、k、l 来移动光标了。</p>
+<p>想要退出文本复制模式的话，按下回车键就可以了。一次移动一格效率低下，在 Vi 模式启用的情况下，可以辅助一些别的快捷键高效工作。</p>
+<p>例如，可以使用 w 键逐词移动，使用 b 键逐词回退。使用 f 键加上任意字符跳转到当前行第一次出现该字符的位置，使用 F 键达到相反的效果。</p>
+<pre><code>vi             emacs        功能
+^              M-m          反缩进
+Escape         C-g          清除选定内容
+Enter          M-w          复制选定内容
+j              Down         光标下移
+h              Left         光标左移
+l              Right        光标右移
+L                           光标移到尾行
+M              M-r          光标移到中间行
+H              M-R          光标移到首行
+k              Up           光标上移
+d              C-u          删除整行
+D              C-k          删除到行末
+$              C-e          移到行尾
+:              g            前往指定行
+C-d            M-Down       向下滚动半屏
+C-u            M-Up         向上滚动半屏
+C-f            Page down    下一页
+w              M-f          下一个词
+p              C-y          粘贴
+C-b            Page up      上一页
+b              M-b          上一个词
+q              Escape       退出
+C-Down or J    C-Down       向下翻
+C-Up or K      C-Up         向下翻
+n              n            继续搜索
+?              C-r          向前搜索
+/              C-s          向后搜索
+0              C-a          移到行首
+Space          C-Space      开始选中
+               C-t          字符调序
+</code></pre>
+<h2 id="_8">杂项：<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<pre><code>d  退出 tmux（tmux 仍在后台运行）
+t  窗口中央显示一个数字时钟
+?  列出所有快捷键
+:  命令提示符
+</code></pre>
+<h2 id="_9">配置选项：<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<pre><code># 鼠标支持 - 设置为 on 来启用鼠标
+* setw -g mode-mouse off
+* set -g mouse-select-pane off
+* set -g mouse-resize-pane off
+* set -g mouse-select-window off
+
+# 设置默认终端模式为 256color
+set -g default-terminal "screen-256color"
+
+# 启用活动警告
+setw -g monitor-activity on
+set -g visual-activity on
+
+# 居中窗口列表
+set -g status-justify centre
+
+# 最大化/恢复窗格
+unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
+unbind Down
+bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
+</code></pre>
+<h2 id="tmuxconf">配置文件（~/.tmux.conf）：<a class="headerlink" href="#tmuxconf" title="Permanent link">&para;</a></h2>
+<pre><code class="bash"># 基础设置
+set -g default-terminal &quot;screen-256color&quot;
+set -g display-time 3000
+set -g escape-time 0
+set -g history-limit 65535
+set -g base-index 1
+set -g pane-base-index 1
+
+# 前缀绑定 (Ctrl+a)
+set -g prefix ^a
+unbind ^b
+bind a send-prefix
+
+# 分割窗口
+unbind '&quot;'
+bind - splitw -v
+unbind %
+bind | splitw -h
+
+# 选中窗口
+bind-key k select-pane -U
+bind-key j select-pane -D
+bind-key h select-pane -L
+bind-key l select-pane -R
+
+# copy-mode 将快捷键设置为 vi 模式
+setw -g mode-keys vi
+
+# 启用鼠标(Tmux v2.1)
+set -g mouse on
+
+# 更新配置文件
+bind r source-file ~/.tmux.conf \; display &quot;已更新&quot;
+
+#&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+# Tmux Plugin Manager(Tmux v2.1)
+# Tmux Resurrect
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+#&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+
+</code></pre>
+
+<p>补充</p>
+<pre><code># 绑定Ctrl+hjkl键为面板上下左右调整边缘的快捷指令
+bind -r ^k resizep -U 10 # 绑定Ctrl+k为往↑调整面板边缘10个单元格
+bind -r ^j resizep -D 10 # 绑定Ctrl+j为往↓调整面板边缘10个单元格
+bind -r ^h resizep -L 10 # 绑定Ctrl+h为往←调整面板边缘10个单元格
+bind -r ^l resizep -R 10 # 绑定Ctrl+l为往→调整面板边缘10个单元格
+</code></pre>
+
+<p>https://louiszhai.github.io/2017/09/30/tmux/#%E5%AF%BC%E8%AF%BB</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../git/" class="btn btn-neutral float-right" title="git">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../后台运行/" class="btn btn-neutral" title="linux后台运行"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../后台运行/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../git/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

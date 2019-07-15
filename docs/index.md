@@ -17,3 +17,5 @@
         ...       # Other markdown pages, images and other files. -->
 ## link
 - [koro1FileHeader](https://github.com/OBKoro1/koro1FileHeader)
+- [mkdocs 配置说明](https://www.mkdocs.org/user-guide/configuration/)
+- [mkdocs.yml范例](https://cyent.github.io/markdown-with-mkdocs-material/appendix/yml/)

@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>flake8 - pyv wiki</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "flake8";
+    var mkdocs_page_input_path = "python\\flake8.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> pyv wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Linux</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../linux/scp/">scp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/awk/">awk</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/sed/">sed</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/sed-single-line-command/">sed单行命令合集</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/后台运行/">linux后台运行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/tmux/">tmux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/git/">git</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">NAS</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../nas/nas/">nas</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/ipkg/">ipkg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/frp/">frp</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Vim</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../vim/vim code slice/">代码片段</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/vunble/">vunble</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/powershell-vim/">在PowerShell中使用Vim</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">VSCode</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../vscode/vscode远程/">vscode访问修改远程文件</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">python</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../断言和异常/">断言和异常</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../自定义函数的特殊属性/">自定义函数的特殊属性</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../code_slice/">code slice</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../package/">package</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../python const/">constant</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pip/">pip镜像源</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../python unittest/">python的unittest单元测试框架断言整理汇总</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">flake8</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#flake8">flake8</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">插件</a></li>
+        
+            <li><a class="toctree-l4" href="#pep8-naming">PEP8-Naming</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-fixme">flake8-fixme</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-eradicate">flake8-eradicate</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-broken-line">flake8-broken-line</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-commas">flake8-commas</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-builtins">flake8-builtins</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-comprehensions">flake8-comprehensions</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-bugbear">flake8-bugbear</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-spellcheck">flake8-spellcheck</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-import-order">flake8-import-order</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-annotations-coverage">flake8-annotations-coverage</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-annotations-complexity">flake8-annotations-complexity</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-assertive">flake8-assertive</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-string-format">flake8-string-format</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-coding">flake8-coding</a></li>
+        
+            <li><a class="toctree-l4" href="#cohesion">cohesion</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-putty">flake8-putty</a></li>
+        
+            <li><a class="toctree-l4" href="#flake8-per-file-ignoreshttpsgithubcomsnoackflake8-per-file-ignores">[flake8-per-file-ignores](https://github.com/snoack/flake8-per-file-ignores</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">perl</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../perl/基本语法/">基本语法</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">正则表达式</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../regexp/零宽断言/">零宽断言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/成对括号/">成对括号</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/常用正则/">常用正则</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">pyv wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>python &raquo;</li>
+        
+      
+    
+    <li>flake8</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="flake8">flake8<a class="headerlink" href="#flake8" title="Permanent link">&para;</a></h2>
+<h3 id="_1">插件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] 安装<a href="https://github.com/DmytroLitvinov/awesome-flake8-extensions">flake8插件</a></li>
+</ul>
+<h3 id="pep8-naming"><a href="https://github.com/PyCQA/pep8-naming">PEP8-Naming</a><a class="headerlink" href="#pep8-naming" title="Permanent link">&para;</a></h3>
+<h4 id="introduce">introduce<a class="headerlink" href="#introduce" title="Permanent link">&para;</a></h4>
+<h4 id="install">install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h4>
+<p><code>pip install pep8-naming</code></p>
+<h4 id="erc-code">erc code<a class="headerlink" href="#erc-code" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N801</td>
+<td>class names should use CapWords convention</td>
+</tr>
+<tr>
+<td>N802</td>
+<td>function name should be lowercase</td>
+</tr>
+<tr>
+<td>N803</td>
+<td>argument name should be lowercase</td>
+</tr>
+<tr>
+<td>N804</td>
+<td>first argument of a classmethod should be named &lsquo;cls&rsquo;</td>
+</tr>
+<tr>
+<td>N805</td>
+<td>first argument of a method should be named &lsquo;self&rsquo;</td>
+</tr>
+<tr>
+<td>N806</td>
+<td>variable in function should be lowercase</td>
+</tr>
+<tr>
+<td>N807</td>
+<td>function name should not start and end with &lsquo;__&rsquo;</td>
+</tr>
+<tr>
+<td>N811</td>
+<td>constant imported as non constant</td>
+</tr>
+<tr>
+<td>N812</td>
+<td>lowercase imported as non lowercase</td>
+</tr>
+<tr>
+<td>N813</td>
+<td>camelcase imported as lowercase</td>
+</tr>
+<tr>
+<td>N814</td>
+<td>camelcase imported as constant</td>
+</tr>
+<tr>
+<td>N815</td>
+<td>mixedCase variable in class scope</td>
+</tr>
+<tr>
+<td>N816</td>
+<td>mixedCase variable in global scope</td>
+</tr>
+</tbody>
+</table>
+<h4 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h4>
+<p>The following flake8 options are added:
+&ndash;ignore-names              Ignore errors for specific variable names.</p>
+<pre><code>                        Currently, this option can only be used for N802, N803, N806, N815, and N816 errors.
+
+                        Default: ``setUp,tearDown,setUpClass,tearDownClass,setUpTestData,failureException,longMessage,maxDiff``.
+</code></pre>
+<p>&ndash;classmethod-decorators    List of method decorators pep8-naming plugin should consider class method.</p>
+<pre><code>                        Used to prevent false N804 errors.
+
+                        Default: ``classmethod``.
+</code></pre>
+<p>&ndash;staticmethod-decorators   List of method decorators pep8-naming plugin should consider static method.</p>
+<pre><code>                        Used to prevent false N805 errors.
+
+                        Default: ``staticmethod``.
+</code></pre>
+<h3 id="flake8-fixme"><a href="https://github.com/tommilligan/flake8-fixme">flake8-fixme</a><a class="headerlink" href="#flake8-fixme" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_1">introduce<a class="headerlink" href="#introduce_1" title="Permanent link">&para;</a></h4>
+<p>发现fixme等关键字 要求python3.6+</p>
+<h4 id="install_1">install<a class="headerlink" href="#install_1" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-fixme</code></p>
+<h4 id="erc-code_1">erc code<a class="headerlink" href="#erc-code_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T100</td>
+<td>line contains FIXME</td>
+</tr>
+<tr>
+<td>T101</td>
+<td>line contains TODO</td>
+</tr>
+<tr>
+<td>T102</td>
+<td>line contains XXX</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flake8-eradicate"><a href="https://github.com/sobolevn/flake8-eradicate">flake8-eradicate</a><a class="headerlink" href="#flake8-eradicate" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_2">introduce<a class="headerlink" href="#introduce_2" title="Permanent link">&para;</a></h4>
+<p>发现废弃代码 要求python3.6+ </p>
+<h4 id="install_2">install<a class="headerlink" href="#install_2" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-eradicate</code></p>
+<h4 id="erc-code_2">erc code<a class="headerlink" href="#erc-code_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E800</td>
+<td>Found commented out code</td>
+</tr>
+</tbody>
+</table>
+<h4 id="options_1">Options<a class="headerlink" href="#options_1" title="Permanent link">&para;</a></h4>
+<p>&ndash;eradicate-aggressive to enable aggressive mode from eradicate, can lead to false positives</p>
+<h3 id="flake8-broken-line"><a href="https://github.com/sobolevn/flake8-broken-line">flake8-broken-line</a><a class="headerlink" href="#flake8-broken-line" title="Permanent link">&para;</a></h3>
+<p>要求python3.6+</p>
+<h4 id="install_3">install<a class="headerlink" href="#install_3" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-broken-line</code></p>
+<h4 id="erc-code_3">erc code<a class="headerlink" href="#erc-code_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N400</td>
+<td>Found backslash that is used for line breaking</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flake8-commas"><a href="https://github.com/PyCQA/flake8-commas">flake8-commas</a><a class="headerlink" href="#flake8-commas" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_3">introduce<a class="headerlink" href="#introduce_3" title="Permanent link">&para;</a></h4>
+<p>逗号<code>,</code>使用不正确</p>
+<h4 id="install_4">install<a class="headerlink" href="#install_4" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-commas</code></p>
+<h4 id="erc-code_4">erc code<a class="headerlink" href="#erc-code_4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C812</td>
+<td>missing trailing comma</td>
+</tr>
+<tr>
+<td>C813</td>
+<td>missing trailing comma in Python 3</td>
+</tr>
+<tr>
+<td>C814</td>
+<td>missing trailing comma in Python 2</td>
+</tr>
+<tr>
+<td>C815</td>
+<td>missing trailing comma in Python 3.5+</td>
+</tr>
+<tr>
+<td>C816</td>
+<td>missing trailing comma in Python 3.6+</td>
+</tr>
+<tr>
+<td>C818</td>
+<td>trailing comma on bare tuple prohibited</td>
+</tr>
+<tr>
+<td>C819</td>
+<td>trailing comma prohibited</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flake8-builtins"><a href="https://github.com/gforcada/flake8-builtins">flake8-builtins</a><a class="headerlink" href="#flake8-builtins" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_4">introduce<a class="headerlink" href="#introduce_4" title="Permanent link">&para;</a></h4>
+<p>内部类型被用作变量或参数</p>
+<h4 id="install_5">install<a class="headerlink" href="#install_5" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-builtins</code></p>
+<h4 id="erc-code_5">erc code<a class="headerlink" href="#erc-code_5" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h3 id="flake8-comprehensions"><a href="https://github.com/adamchainz/flake8-comprehensions">flake8-comprehensions</a><a class="headerlink" href="#flake8-comprehensions" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_5">introduce<a class="headerlink" href="#introduce_5" title="Permanent link">&para;</a></h4>
+<p>不必要的迭代器等</p>
+<h4 id="install_6">install<a class="headerlink" href="#install_6" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-comprehensions</code></p>
+<h4 id="erc-code_6">erc code<a class="headerlink" href="#erc-code_6" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C400</td>
+<td>Unnecessary generator - rewrite as a list comprehension.</td>
+</tr>
+<tr>
+<td>C401</td>
+<td>Unnecessary generator - rewrite as a set comprehension.</td>
+</tr>
+<tr>
+<td>C402</td>
+<td>Unnecessary generator - rewrite as a dict comprehension.</td>
+</tr>
+<tr>
+<td>C403</td>
+<td>Unnecessary list comprehension - rewrite as a set comprehension.</td>
+</tr>
+<tr>
+<td>C404</td>
+<td>Unnecessary list comprehension - rewrite as a dict comprehension.</td>
+</tr>
+<tr>
+<td>C405</td>
+<td>Unnecessary (list/tuple) literal - rewrite as a set literal.</td>
+</tr>
+<tr>
+<td>C406</td>
+<td>Unnecessary (list/tuple) literal - rewrite as a dict literal.</td>
+</tr>
+<tr>
+<td>C407</td>
+<td>Unnecessary list comprehension - &lsquo;<builtin>&lsquo; can take a generator.</td>
+</tr>
+<tr>
+<td>C408</td>
+<td>Unnecessary (dict/list/tuple) call - rewrite as a literal.</td>
+</tr>
+<tr>
+<td>C409</td>
+<td>Unnecessary (list/tuple) passed to tuple() - (remove the outer call to tuple()/rewrite as a tuple literal).</td>
+</tr>
+<tr>
+<td>C410</td>
+<td>Unnecessary (list/tuple) passed to list() - (remove the outer call to list()/rewrite as a list literal).</td>
+</tr>
+<tr>
+<td>C411</td>
+<td>Unnecessary list call - remove the outer call to list().</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flake8-bugbear"><a href="https://github.com/PyCQA/flake8-bugbear">flake8-bugbear</a><a class="headerlink" href="#flake8-bugbear" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_6">introduce<a class="headerlink" href="#introduce_6" title="Permanent link">&para;</a></h4>
+<p>不明觉厉</p>
+<h4 id="install_7">install<a class="headerlink" href="#install_7" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-bugbear</code></p>
+<h4 id="erc-code_7">erc code<a class="headerlink" href="#erc-code_7" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>B001</strong></td>
+<td>Do not use bare <code>except:</code>, it also catches unexpected events like memory errors, interrupts, system exit, and so on.  Prefer <code>except Exception:</code>.  If you&rsquo;re sure what you&rsquo;re doing, be explicit and write <code>except BaseException:</code>.  Disable E722 to avoid duplicate warnings.</td>
+</tr>
+<tr>
+<td><strong>B002</strong></td>
+<td>Python does not support the unary prefix increment. Writing <code>++n</code> is equivalent to <code>+(+(n))</code>, which equals <code>n</code>. You meant <code>n += 1</code>.</td>
+</tr>
+<tr>
+<td><strong>B003</strong></td>
+<td>Assigning to <code>os.environ</code> doesn&rsquo;t clear the environment.  Subprocesses are going to see outdated variables, in disagreement with the current process.  Use <code>os.environ.clear()</code> or the <code>env=</code>  argument to Popen.</td>
+</tr>
+<tr>
+<td><strong>B004</strong></td>
+<td>Using <code>hasattr(x, '__call__')</code> to test if <code>x</code> is callable is unreliable.  If <code>x</code> implements custom <code>__getattr__</code> or its <code>__call__</code> is itself not callable, you might get misleading results.  Use <code>callable(x)</code> for consistent results.</td>
+</tr>
+<tr>
+<td><strong>B005</strong></td>
+<td>Using <code>.strip()</code> with multi-character strings is misleading the reader. It looks like stripping a substring. Move your character set to a constant if this is deliberate. Use <code>.replace()</code> or regular expressions to remove string fragments.</td>
+</tr>
+<tr>
+<td><strong>B006</strong></td>
+<td>Do not use mutable data structures for argument defaults.  All calls reuse one instance of that data structure, persisting changes between them.</td>
+</tr>
+<tr>
+<td><strong>B007</strong></td>
+<td>Loop control variable not used within the loop body.  If this is intended, start the name with an underscore.</td>
+</tr>
+<tr>
+<td><strong>B008</strong></td>
+<td>Do not perform calls in argument defaults.  The call is performed only once at function definition time.  All calls to your function will reuse the result of that definition-time call.  If this is intended, assign the function call to a module-level variable and use that variable as a default value.</td>
+</tr>
+<tr>
+<td><strong>B009</strong></td>
+<td>Do not call <code>getattr(x, 'attr')</code>, instead use normal property access: <code>x.attr</code>. Missing a default to <code>getattr</code> will cause an <code>AttributeError</code> to be raised for non-existent properties. There is no additional safety in using <code>getattr</code> if you know the attribute name ahead of time.</td>
+</tr>
+<tr>
+<td><strong>B010</strong></td>
+<td>Do not call <code>setattr(x, 'attr', val)</code>, instead use normal property access: <code>x.attr = val</code>. There is no additional safety in using <code>setattr</code> if you know the attribute name ahead of time.</td>
+</tr>
+<tr>
+<td><strong>B011</strong></td>
+<td>Do not call <code>assert False</code> since <code>python -O</code> removes these calls. Instead callers should <code>raise AssertionError()</code>.</td>
+</tr>
+<tr>
+<td><strong>B301</strong></td>
+<td>Python 3 does not include <code>.iter*</code> methods on dictionaries. The default behavior is to return iterables. Simply remove the <code>iter</code> prefix from the method.  For Python 2 compatibility, also prefer the Python 3 equivalent if you expect that the size of the dict to be small and bounded. The performance regression on Python 2 will be negligible and the code is going to be the clearest.  Alternatively, use <code>six.iter*</code> or <code>future.utils.iter*</code>.</td>
+</tr>
+<tr>
+<td><strong>B302</strong></td>
+<td>Python 3 does not include <code>.view*</code> methods on dictionaries. The default behavior is to return viewables. Simply remove the <code>view</code> prefix from the method.  For Python 2 compatibility, also prefer the Python 3 equivalent if you expect that the size of the dict to be small and bounded. The performance regression on Python 2 will be negligible and the code is going to be the clearest.  Alternatively, use <code>six.view*</code> or <code>future.utils.view*</code>.</td>
+</tr>
+<tr>
+<td><strong>B303</strong></td>
+<td>The <code>__metaclass__</code> attribute on a class definition does nothing on Python 3. Use <code>class MyClass(BaseClass, metaclass=...)</code>. For Python 2 compatibility, use <code>six.add_metaclass</code>.</td>
+</tr>
+<tr>
+<td><strong>B304</strong></td>
+<td><code>sys.maxint</code> is not a thing on Python 3. Use <code>sys.maxsize</code>.</td>
+</tr>
+<tr>
+<td><strong>B305</strong></td>
+<td><code>.next()</code> is not a thing on Python 3. Use the <code>next()</code> builtin. For Python 2 compatibility, use <code>six.next()</code>.</td>
+</tr>
+<tr>
+<td><strong>B306</strong></td>
+<td><code>BaseException.message</code> has been deprecated as of Python 2.6 and is removed in Python 3. Use <code>str(e)</code> to access the user-readable message. Use <code>e.args</code> to access arguments passed to the exception.</td>
+</tr>
+<tr>
+<td><strong>B901</strong></td>
+<td>Using <code>return x</code> in a generator function used to be syntactically invalid in Python 2. In Python 3 <code>return x</code> can be used in a generator as a return value in conjunction with <code>yield from</code>. Users coming from Python 2 may expect the old behavior which might lead to bugs.  Use native <code>async def</code> coroutines or mark intentional <code>return x</code> usage with <code># noqa</code> on the same line.</td>
+</tr>
+<tr>
+<td><strong>B902</strong></td>
+<td>Invalid first argument used for method. Use <code>self</code> for instance methods, and <code>cls</code> for class methods (which includes <code>__new__</code> and <code>__init_subclass__</code>) or instance methods of metaclasses (detected as classes directly inheriting from <code>type</code>).</td>
+</tr>
+<tr>
+<td><strong>B903</strong></td>
+<td>Use <code>collections.namedtuple</code> (or <code>typing.NamedTuple</code>) for data classes that only set attributes in an <code>__init__</code> method, and do nothing else. If the attributes should be mutable, define the attributes in <code>__slots__</code> to save per-instance memory and to prevent accidentally creating additional attributes on instances.</td>
+</tr>
+<tr>
+<td><strong>B950</strong></td>
+<td>Line too long. This is a pragmatic equivalent of <code>pycodestyle</code>&lsquo;s E501: it considers &ldquo;max-line-length&rdquo; but only triggers when the value has been exceeded by <strong>more than 10%</strong>. You will no longer be forced to reformat code due to the closing parenthesis being one character too far to satisfy the linter. At the same time, if you do significantly violate the line length, you will receive a message that states what the actual limit is. This is inspired by Raymond Hettinger&rsquo;s <code>"Beyond PEP 8" talk &lt;https://www.youtube.com/watch?v=wf-BqAjZb8M&gt;</code>_ and highway patrol not stopping you if you drive &lt; 5mph too fast. Disable E501 to avoid duplicate warnings.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flake8-spellcheck"><a href="https://github.com/MichaelAquilina/flake8-spellcheck">flake8-spellcheck</a><a class="headerlink" href="#flake8-spellcheck" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_7">introduce<a class="headerlink" href="#introduce_7" title="Permanent link">&para;</a></h4>
+<p>拼写检查，允许白名单</p>
+<h4 id="install_8">install<a class="headerlink" href="#install_8" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-spellcheck</code></p>
+<h4 id="erc-code_8">erc code<a class="headerlink" href="#erc-code_8" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SC100</td>
+<td>Spelling error in comments</td>
+</tr>
+<tr>
+<td>SC200</td>
+<td>Spelling error in name (e.g. variable, function, class)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flake8-import-order"><a href="https://github.com/PyCQA/flake8-import-order">flake8-import-order</a><a class="headerlink" href="#flake8-import-order" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_8">introduce<a class="headerlink" href="#introduce_8" title="Permanent link">&para;</a></h4>
+<p>导入顺序，风格可选，可以自定义风格</p>
+<h4 id="install_9">install<a class="headerlink" href="#install_9" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-import-order</code></p>
+<h4 id="erc-code_9">erc code<a class="headerlink" href="#erc-code_9" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I100</td>
+<td>Your import statements are in the wrong order.</td>
+</tr>
+<tr>
+<td>I101</td>
+<td>The names in your from import are in the wrong order.</td>
+</tr>
+<tr>
+<td>I201</td>
+<td>Missing newline between import groups.</td>
+</tr>
+<tr>
+<td>I202</td>
+<td>Additional newline in a group of imports.</td>
+</tr>
+<tr>
+<td>#### <a href="https://github.com/PyCQA/flake8-import-order#styles">Styles</a></td>
+<td></td>
+</tr>
+<tr>
+<td>The following styles are directly supported,</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>cryptography</li>
+<li>google</li>
+<li>smarkets</li>
+<li>appnexus</li>
+<li>edited</li>
+<li>pycharm</li>
+<li>pep8</li>
+</ul>
+<p>You can also add your own style by extending Style class.</p>
+<h3 id="flake8-annotations-coverage"><a href="https://github.com/best-doctor/flake8-annotations-coverage">flake8-annotations-coverage</a><a class="headerlink" href="#flake8-annotations-coverage" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_9">introduce<a class="headerlink" href="#introduce_9" title="Permanent link">&para;</a></h4>
+<h4 id="install_10">install<a class="headerlink" href="#install_10" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-annotations-coverage</code></p>
+<h4 id="erc-code_10">erc code<a class="headerlink" href="#erc-code_10" title="Permanent link">&para;</a></h4>
+<h3 id="flake8-annotations-complexity"><a href="https://github.com/best-doctor/flake8-annotations-complexity">flake8-annotations-complexity</a><a class="headerlink" href="#flake8-annotations-complexity" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_10">introduce<a class="headerlink" href="#introduce_10" title="Permanent link">&para;</a></h4>
+<h4 id="install_11">install<a class="headerlink" href="#install_11" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-annotations-complexity</code></p>
+<h4 id="erc-code_11">erc code<a class="headerlink" href="#erc-code_11" title="Permanent link">&para;</a></h4>
+<h3 id="flake8-assertive"><a href="https://github.com/jparise/flake8-assertive">flake8-assertive</a><a class="headerlink" href="#flake8-assertive" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_11">introduce<a class="headerlink" href="#introduce_11" title="Permanent link">&para;</a></h4>
+<p>检查unittest中assert语句</p>
+<h4 id="install_12">install<a class="headerlink" href="#install_12" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-assertive</code></p>
+<h4 id="erc-code_12">erc code<a class="headerlink" href="#erc-code_12" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A500</td>
+<td>prefer {func} for &lsquo;{op}&rsquo; comparisons</td>
+</tr>
+<tr>
+<td>A501</td>
+<td>prefer {func} for &lsquo;{op}&rsquo; expressions</td>
+</tr>
+<tr>
+<td>A502</td>
+<td>prefer {func} instead of comparing to {obj}</td>
+</tr>
+<tr>
+<td>#### configuration</td>
+<td></td>
+</tr>
+<tr>
+<td>- assertive-snakecase: suggest snake_case assert method names (e.g. assert_true()) instead of the standard names (e.g. assertTrue())</td>
+<td></td>
+</tr>
+<tr>
+<td>- assertive-test-pattern: fnmatch pattern for identifying unittest test files (and all other files will be skipped)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="flake8-string-format"><a href="https://github.com/xZise/flake8-string-format">flake8-string-format</a><a class="headerlink" href="#flake8-string-format" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_12">introduce<a class="headerlink" href="#introduce_12" title="Permanent link">&para;</a></h4>
+<h4 id="install_13">install<a class="headerlink" href="#install_13" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-string-format</code></p>
+<h4 id="erc-code_13">erc code<a class="headerlink" href="#erc-code_13" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1xx</td>
+<td>Presence of implicit parameters</td>
+</tr>
+<tr>
+<td>P2xx</td>
+<td>Missing values in the parameters</td>
+</tr>
+<tr>
+<td>P3xx</td>
+<td>Unused values in the parameters</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P101</td>
+<td>format string does contain unindexed parameters</td>
+</tr>
+<tr>
+<td>P102</td>
+<td>docstring does contain unindexed parameters</td>
+</tr>
+<tr>
+<td>P103</td>
+<td>other string does contain unindexed parameters</td>
+</tr>
+<tr>
+<td>P201</td>
+<td>format call uses to large index (INDEX)</td>
+</tr>
+<tr>
+<td>P202</td>
+<td>format call uses missing keyword (KEYWORD)</td>
+</tr>
+<tr>
+<td>P203</td>
+<td>format call uses keyword arguments but no named entries</td>
+</tr>
+<tr>
+<td>P204</td>
+<td>format call uses variable arguments but no numbered entries</td>
+</tr>
+<tr>
+<td>P205</td>
+<td>format call uses implicit and explicit indexes together</td>
+</tr>
+<tr>
+<td>P301</td>
+<td>format call provides unused index (INDEX)</td>
+</tr>
+<tr>
+<td>P302</td>
+<td>format call provides unused keyword (KEYWORD)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flake8-coding"><a href="https://github.com/tk0miya/flake8-coding">flake8-coding</a><a class="headerlink" href="#flake8-coding" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_13">introduce<a class="headerlink" href="#introduce_13" title="Permanent link">&para;</a></h4>
+<h4 id="install_14">install<a class="headerlink" href="#install_14" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-coding</code></p>
+<h4 id="erc-code_14">erc code<a class="headerlink" href="#erc-code_14" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C101</td>
+<td>Coding magic comment not found</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C102</td>
+<td>Unknown encoding found in coding magic comment</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C103</td>
+<td>Coding magic comment present</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="options_2">Options<a class="headerlink" href="#options_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>accept-encodings</li>
+</ul>
+<pre><code>[flake8]
+accept-encodings = utf-8,utf-16
+</code></pre>
+
+<ul>
+<li>no-accept-encodings</li>
+</ul>
+<pre><code>[flake8]
+no-accept-encodings = True
+</code></pre>
+
+<h3 id="cohesion"><a href="https://github.com/mschwager/cohesion#flake8-support">cohesion</a><a class="headerlink" href="#cohesion" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_14">introduce<a class="headerlink" href="#introduce_14" title="Permanent link">&para;</a></h4>
+<p>内聚性检查</p>
+<h4 id="install_15">install<a class="headerlink" href="#install_15" title="Permanent link">&para;</a></h4>
+<p><code>pip install cohesion</code></p>
+<h4 id="erc-code_15">erc code<a class="headerlink" href="#erc-code_15" title="Permanent link">&para;</a></h4>
+<p>H601 &hellip;
+TODO</p>
+<h3 id="flake8-putty"><a href="https://github.com/jayvdb/flake8-putty">flake8-putty</a><a class="headerlink" href="#flake8-putty" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_15">introduce<a class="headerlink" href="#introduce_15" title="Permanent link">&para;</a></h4>
+<p>智能忽略</p>
+<h4 id="install_16">install<a class="headerlink" href="#install_16" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-putty</code></p>
+<h4 id="erc-code_16">erc code<a class="headerlink" href="#erc-code_16" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h3 id="flake8-per-file-ignoreshttpsgithubcomsnoackflake8-per-file-ignores">[flake8-per-file-ignores](https://github.com/snoack/flake8-per-file-ignores<a class="headerlink" href="#flake8-per-file-ignoreshttpsgithubcomsnoackflake8-per-file-ignores" title="Permanent link">&para;</a></h3>
+<h4 id="introduce_16">introduce<a class="headerlink" href="#introduce_16" title="Permanent link">&para;</a></h4>
+<h4 id="install_17">install<a class="headerlink" href="#install_17" title="Permanent link">&para;</a></h4>
+<p><code>pip install flake8-per-file-ignores</code></p>
+<h4 id="erc-code_17">erc code<a class="headerlink" href="#erc-code_17" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../perl/基本语法/" class="btn btn-neutral float-right" title="基本语法">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../python unittest/" class="btn btn-neutral" title="python的unittest单元测试框架断言整理汇总"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../python unittest/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../perl/基本语法/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -72,6 +72,14 @@
                     
     <a class="" href="../../linux/后台运行/">linux后台运行</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/tmux/">tmux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/git/">git</a>
+                </li>
     </ul>
 	    </li>
           
@@ -82,6 +90,14 @@
                 <li class="">
                     
     <a class="" href="../../nas/nas/">nas</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/ipkg/">ipkg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/frp/">frp</a>
                 </li>
     </ul>
 	    </li>
@@ -97,6 +113,10 @@
                 <li class="">
                     
     <a class="" href="../../vim/vunble/">vunble</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/powershell-vim/">在PowerShell中使用Vim</a>
                 </li>
     </ul>
 	    </li>
@@ -161,6 +181,21 @@
                     
     <a class="" href="../python unittest/">python的unittest单元测试框架断言整理汇总</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../flake8/">flake8</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">perl</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../perl/基本语法/">基本语法</a>
+                </li>
     </ul>
 	    </li>
           
@@ -175,6 +210,10 @@
                 <li class="">
                     
     <a class="" href="../../regexp/成对括号/">成对括号</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/常用正则/">常用正则</a>
                 </li>
     </ul>
 	    </li>
@@ -215,7 +254,7 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="1-global-variable">1 <strong>global variable</strong></h3>
+                <h3 id="1-global-variable">1 <strong>global variable</strong><a class="headerlink" href="#1-global-variable" title="Permanent link">&para;</a></h3>
 <pre><code class="python">def global_init():
     global _global_dict
     _global_dict = {}
@@ -230,8 +269,8 @@ def get_global_value(key, defVal = None):
         return defVa
 </code></pre>
 
-<h3 id="2-const-value">2 <strong>const value</strong></h3>
-<h4 id="21-case1">2.1 <strong>case1</strong></h4>
+<h3 id="2-const-value">2 <strong>const value</strong><a class="headerlink" href="#2-const-value" title="Permanent link">&para;</a></h3>
+<h4 id="21-case1">2.1 <strong>case1</strong><a class="headerlink" href="#21-case1" title="Permanent link">&para;</a></h4>
 <pre><code class="python">class ConstValue(object):
     class ConstError(TypeError):
         pass
@@ -251,7 +290,7 @@ ConstValue.GOOGLE = 100
 <ul>
 <li>参考 <a href="https://www.jianshu.com/p/5ba80472385c">Python常量的简单实现</a></li>
 </ul>
-<h4 id="22-case2">2.2 <strong>case2</strong></h4>
+<h4 id="22-case2">2.2 <strong>case2</strong><a class="headerlink" href="#22-case2" title="Permanent link">&para;</a></h4>
 <pre><code class="python"># const.py
 class _const:
     class ConstError(TypeError): pass

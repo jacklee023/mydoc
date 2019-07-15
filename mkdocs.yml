@@ -1,5 +1,7 @@
 site_name: pyv wiki
 theme: readthedocs
+    # feature:
+    #     tabs: true
 
 pages:
     - Linux: 
@@ -9,12 +11,16 @@ pages:
         - sed: 'linux/sed.md'
         - sed单行命令合集: 'linux/sed-single-line-command.md'
         - linux后台运行: 'linux/后台运行.md'
-
+        - tmux: 'linux/tmux.md'
+        - git: 'linux/git.md'
     - NAS:
         - nas: 'nas/nas.md'
+        - ipkg: 'nas/ipkg.md'
+        - frp: 'nas/frp.md'
     - Vim: 
         - 代码片段: 'vim/vim code slice.md'
         - vunble: 'vim/vunble.md'
+        - 在PowerShell中使用Vim : 'vim/powershell-vim.md'
     - VSCode: 
         - vscode访问修改远程文件: 'vscode/vscode远程.md'
     - python: 
@@ -25,6 +31,15 @@ pages:
         - constant: 'python/python const.md'
         - pip镜像源: 'python/pip.md'
         - python的unittest单元测试框架断言整理汇总: 'python/python unittest.md'
+        - flake8: 'python/flake8.md'
+    - perl:
+        - 基本语法: 'perl/基本语法.md'
     - 正则表达式: 
         - 零宽断言: 'regexp/零宽断言.md'
         - 成对括号: 'regexp/成对括号.md'
+        - 常用正则: 'regexp/常用正则.md'
+
+markdown_extensions: 
+    - smarty
+    - toc:
+        permalink: True

@@ -72,6 +72,14 @@
                     
     <a class="" href="../../linux/后台运行/">linux后台运行</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/tmux/">tmux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/git/">git</a>
+                </li>
     </ul>
 	    </li>
           
@@ -82,6 +90,14 @@
                 <li class="">
                     
     <a class="" href="../../nas/nas/">nas</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/ipkg/">ipkg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/frp/">frp</a>
                 </li>
     </ul>
 	    </li>
@@ -97,6 +113,10 @@
                 <li class="">
                     
     <a class="" href="../../vim/vunble/">vunble</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/powershell-vim/">在PowerShell中使用Vim</a>
                 </li>
     </ul>
 	    </li>
@@ -162,6 +182,21 @@
                     
     <a class="" href="../python unittest/">python的unittest单元测试框架断言整理汇总</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../flake8/">flake8</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">perl</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../perl/基本语法/">基本语法</a>
+                </li>
     </ul>
 	    </li>
           
@@ -176,6 +211,10 @@
                 <li class="">
                     
     <a class="" href="../../regexp/成对括号/">成对括号</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/常用正则/">常用正则</a>
                 </li>
     </ul>
 	    </li>
@@ -216,14 +255,25 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="_1"><strong>断言和异常</strong></h3>
-<h4 id="1">1. <strong>理解</strong></h4>
+                <div class="toc">
+<ul>
+<li><a href="#_1">断言和异常</a><ul>
+<li><a href="#1">1. 理解</a></li>
+<li><a href="#2">2. 范例</a></li>
+<li><a href="#3">3. 解释</a></li>
+<li><a href="#4">4. 参考</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="_1"><strong>断言和异常</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="1">1. <strong>理解</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p><strong>检查先验条件使用断言，检查后验条件使用异常</strong></p>
 <p>异常及异常处理是程序流程的一个重要组成部分, 断言不是. 断言是一种调试工具.</p>
 <p>assert用在那些你知道绝对不会发生的事情上，但是因为人总是会犯错误，保不准你写出来的东西跟你想的不一样。所以assert用来捕捉的是程序员自己的错误。同理，exception捕捉的是用户或者环境的错误。</p>
 </blockquote>
-<h4 id="2">2. <strong>范例</strong></h4>
+<h4 id="2">2. <strong>范例</strong><a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
 <pre><code class="python">def read_file(file_path):
     assert is_instance(file_path, str)
     if not check_exist(file_path):
@@ -232,12 +282,12 @@
         raise PermissionError()
 </code></pre>
 
-<h4 id="3">3. <strong>解释</strong></h4>
+<h4 id="3">3. <strong>解释</strong><a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>read_file函数要求在开始执行的时候满足一定条件：file_path必须是str类型，这个条件就是先验条件，如果不满足，就不能调用这个函数
 文件不存在和没有权限，这两种情况并不属于代码bug，是代码逻辑的一部分，上层代码捕获异常后可能会执行其他逻辑，因此我们不能接受这部分代码在生产环境中被忽略。并且，相比于assert语句只能抛出AssertionError，使用异常可以抛出更细致的错误，方便上层代码针对不同错误执行不同的逻辑。</p>
 </blockquote>
-<h4 id="4">4. <strong>参考</strong></h4>
+<h4 id="4">4. <strong>参考</strong><a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://www.zhihu.com/question/24461924">什么时候用异常，什么时候用断言？</a></li>
 <li><a href="https://www.jianshu.com/p/45c127388699">你真的会正确使用断言吗？</a></li>

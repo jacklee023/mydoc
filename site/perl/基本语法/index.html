@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>基本语法 - pyv wiki</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u57fa\u672c\u8bed\u6cd5";
+    var mkdocs_page_input_path = "perl\\\u57fa\u672c\u8bed\u6cd5.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> pyv wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Linux</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../linux/scp/">scp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/awk/">awk</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/sed/">sed</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/sed-single-line-command/">sed单行命令合集</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/后台运行/">linux后台运行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/tmux/">tmux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/git/">git</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">NAS</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../nas/nas/">nas</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/ipkg/">ipkg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/frp/">frp</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Vim</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../vim/vim code slice/">代码片段</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/vunble/">vunble</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/powershell-vim/">在PowerShell中使用Vim</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">VSCode</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../vscode/vscode远程/">vscode访问修改远程文件</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">python</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../python/断言和异常/">断言和异常</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/自定义函数的特殊属性/">自定义函数的特殊属性</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/code_slice/">code slice</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/package/">package</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/python const/">constant</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/pip/">pip镜像源</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/python unittest/">python的unittest单元测试框架断言整理汇总</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/flake8/">flake8</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">perl</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">基本语法</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#1data-type">1．数据类型(Data type)：</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#1-1">1-1 常用的操作运算符</a></li>
+        
+            <li><a class="toctree-l4" href="#1-2-precedence-">1-2 操作符优先级别（ precedence--优先级）</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#2-perl">2 Perl数组变量和列表</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#2-1">2-1 列表</a></li>
+        
+            <li><a class="toctree-l4" href="#2-2-perl-">2-2 Perl数组--列表的存贮</a></li>
+        
+            <li><a class="toctree-l4" href="#2-3-hash-arrayassociative-array">2-3 Hash Array(Associative Array)：</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#3-control-statements">3 控制结构(Control Statements)</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#3-1-if">3-1 选择 if结构</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#elsif-else-if">elsif 就是 else if</a></li>
+    
+
+    <li class="toctree-l3"><a href="#statement">如果指令(statement)只有一项，我们可以使用倒装句法，看起来比较简洁。</a></li>
+    
+
+    <li class="toctree-l3"><a href="#unless-if-not">unless 就是if not</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#3-3-subroutines">3-3 子程序(Subroutines)</a></li>
+        
+            <li><a class="toctree-l4" href="#3-4-io">3-4 I/O和档案处理</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#4">4 函数</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#4-1-perl">4-1 Perl函数</a></li>
+        
+            <li><a class="toctree-l4" href="#4-2-perl">4-2 Perl参数</a></li>
+        
+            <li><a class="toctree-l4" href="#4-3-shift">4-3 shift</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#5">5 总结</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#5-1">5-1 数据操作</a></li>
+        
+            <li><a class="toctree-l4" href="#5-2">5-2 特殊变量</a></li>
+        
+            <li><a class="toctree-l4" href="#5-3">5-3 特殊用法</a></li>
+        
+            <li><a class="toctree-l4" href="#5-4">5-4 正则表达式</a></li>
+        
+            <li><a class="toctree-l4" href="#5-5">5-5 常用函数</a></li>
+        
+            <li><a class="toctree-l4" href="#5-5_1">5-5 常用库</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">正则表达式</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../regexp/零宽断言/">零宽断言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/成对括号/">成对括号</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/常用正则/">常用正则</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">pyv wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>perl &raquo;</li>
+        
+      
+    
+    <li>基本语法</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="1data-type">1．数据类型(Data type)：<a class="headerlink" href="#1data-type" title="Permanent link">&para;</a></h1>
+<p>Perl 的数据类型大致分为四种：Scalar（变量）、Scalar Array（数组）、Hash Array（散列）、References（指针），看起来虽少但用起来却绰绰有余。尤其在写Perl程序时可以不必事先宣告变量，这一点对刚学程序语言的人甚为方便，不过为了以后程序除错和维护方便，我建议你还是养成事先声明变量的习惯比较好。</p>
+<h2 id="1-1">1-1 常用的操作运算符<a class="headerlink" href="#1-1" title="Permanent link">&para;</a></h2>
+<h3 id="1-1-1">1-1-1 算术运算符<a class="headerlink" href="#1-1-1" title="Permanent link">&para;</a></h3>
+<p>+(加)、-(减)、<em>(乘)、/(除)、</em>*(幂)、%(余)、-(负) </p>
+<p>此外，注意当一个字符串参加运算，需要转化为整数时，如果不能转化为整数则值为0。例如：&lsquo;2&rsquo;+1=3，&rsquo;a&rsquo;+1=1</p>
+<h3 id="1-1-2">1-1-2 数字比较运算符<a class="headerlink" href="#1-1-2" title="Permanent link">&para;</a></h3>
+<p>&lt;（小于）、=（等于）、&gt;（大于）、==（等于）、&lt;=（小于等于）、&gt;=（大于等于）、!=（不等于）、&lt;=&gt;（比较） 
+- ==：比较运算，比较的结果为真或非零，假或零 
+- &lt;=&gt;：比较运算</p>
+<blockquote>
+<p>例如：$a&lt;=&gt;$b，当$a&gt;$b时，值为1；当$a&lt;$b时，值为-1；当$a==$b时，值为0 
+- 自动把操作数转化为整数,不能转化为整数则为0 
+- 浮点数不精确，不要把值相近的数比较，否则得到的结果是出乎意料的</p>
+</blockquote>
+<h3 id="1-1-3">1-1-3 字符串比较运算符<a class="headerlink" href="#1-1-3" title="Permanent link">&para;</a></h3>
+<p>lt（小于）、gt（大于）、eq（等于）、le（小于等于）、ge（大于等于）、ne（等于）、cmp（比较） </p>
+<ul>
+<li>字符串的比较原则：按照字母表的顺序比较，数字&lt;大写字母&lt;小写字母（a小—z大） </li>
+<li>字符串比较的次序：字符串从左到右比较。&rsquo;azz&rsquo;&lt;‘bc&rsquo;（即：首先a与b进行比较，然后z与c进行比较） </li>
+<li>当一个串是另一个的前缀时，长度长的为大。例如：dog&lt;doghouse </li>
+<li>字符串可以从右向左进位，且是字母数字分别进行 </li>
+<li>自动把操作数转化为字符串。123 lt 45 =&gt; &lsquo;123&rsquo; lt &lsquo;45&rsquo; </li>
+<li>cmp等同于&lt;=&gt;，结果为-1,0, 1 <blockquote>
+<p>例如：$str1=”a”，$str2=”a“，则print ($str1 cmp $str2) ==&gt; 0 <br />
+ 例如：$str1=”a”，$str2=”b”，则print($str1 cmp $str2)===&gt; -1 <br />
+ 例如：$str1=”b”，$str2=”a”，则print($str1 cmp $str2)===&gt; 1   </p>
+</blockquote>
+</li>
+<li>空串，0，Undef，这三种情况都为假 <blockquote>
+<p>例如：如下比较的结果<br />
+35 != 30+5     #假 <br />
+35 == 35.0     #真 <br />
+&lsquo;35&rsquo; eq &lsquo;35.0&rsquo;   #假（当成字符串来比较）<br />
+&lsquo;fred&rsquo;  lt  &lsquo;barney&rsquo;  #假<br />
+&lsquo;fred&rsquo;  lt  &lsquo;free&rsquo;      #假<br />
+&lsquo;fred&rsquo;  eq &ldquo;fred&rdquo;    #真<br />
+&lsquo;fred&rsquo;  eq  &ldquo;Fred&rdquo;  #假<br />
+&lsquo;   &lsquo;  gt  &lsquo; &lsquo;  #真 </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="1-1-4-x">1-1-4 字符串连接（.）、字符/字符串重复（x）<a class="headerlink" href="#1-1-4-x" title="Permanent link">&para;</a></h3>
+<ul>
+<li>连接（ “.“），例如：$a=‘a&rsquo;.&rsquo;b&rsquo;;  =&gt;‘ab&rsquo;<br />
+在print时可以直接写print $a$b=&gt;print $a.$b; 但是这两者的原理是不一样的 </li>
+<li>重复（ “x” ）<br />
+前后有空格（目的：为了和变量名分开）  <blockquote>
+<p>例如：‘a&rsquo;  x  5=‘aaaaa&rsquo;，若重复次数&lt;1，则返回空串 </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="1-1-5andornotxor">1-1-5)、逻辑运算符（&amp;&amp;(and)（与）、||(or)（或）、!(not)（非）、xor（异或）<a class="headerlink" href="#1-1-5andornotxor" title="Permanent link">&para;</a></h3>
+<h3 id="1-1-6">1-1-6 位操作运算符<a class="headerlink" href="#1-1-6" title="Permanent link">&para;</a></h3>
+<p>&amp;（按位与）、 |（按位或）、 ~（按位非）、 ^（按位异或）、 &lt;&lt;（左移）、&gt;&gt;（右移） </p>
+<h3 id="1-1-7">1-1-7 赋值运算符<a class="headerlink" href="#1-1-7" title="Permanent link">&para;</a></h3>
+<p>=、+=、-=、<em>=、/=、%=、</em>*=、&amp;=、|=、^=、.= </p>
+<h3 id="1-1-8-">1-1-8 自增（++）、自减（&ndash;）<a class="headerlink" href="#1-1-8-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>可用于字符串的自增，当z、Z、9时进位。$a=‘caz&rsquo;; $a++; ==&gt; $a=‘cba&rsquo;; </li>
+<li>不能用于字符串的自减，当$a&ndash;时，按数字运算，字符先转化为0再自减 </li>
+<li>如果字符串含有非字母数字符号，或数字位于字母中时，自增也先化为0再自增 <blockquote>
+<p>例如：$a=‘ab*c&rsquo;; $a++;  ==&gt; $a=1;<br />
+例如：$a=‘ab5c&rsquo;; $a++;  ==&gt; $a=1；  </p>
+</blockquote>
+</li>
+<li>只能用于单一变量，不能对运算后的变量进行。例如：($a+$b)++</li>
+</ul>
+<h3 id="1-1-9">1-1-9 逗号（相当于：将两条语句写在一行）<a class="headerlink" href="#1-1-9" title="Permanent link">&para;</a></h3>
+<h3 id="1-1-10">1-1-10 条件运算符    条件？ 真：假<a class="headerlink" href="#1-1-10" title="Permanent link">&para;</a></h3>
+<h2 id="1-2-precedence-">1-2 操作符优先级别（ precedence&ndash;优先级）<a class="headerlink" href="#1-2-precedence-" title="Permanent link">&para;</a></h2>
+<h3 id="1-2-1">1-2-1 当一个表达式中出现几种不同的运算符，哪个先计算，哪个后计算<a class="headerlink" href="#1-2-1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>例如：$condvar == 43 ? $var1 : $var2 = 14;（先算条件，后算赋值） <br />
+例如：$x = $a == $b;（先算关系，后算赋值） <br />
+例如：$x == 0 || $y / $x &gt; 5;（先算除，接着算大于、接着算等于，最后算关系或） 例如：$result = 11 * 2 + 6 ** 2 &lt;&lt;  </p>
+</blockquote>
+<h3 id="1-2-2">1-2-2（先算幂，再算乘，接着算加，再接着算左移，最后算赋值）<a class="headerlink" href="#1-2-2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>一般的优先级如下：自增自减最高，单操作数高于多操作数，数字运算 &gt; 比较运算（数字比较与字符串比较） &gt; 位运算 &gt; 赋值运算 &gt; 逻辑运算 </li>
+<li>数字运算：幂 &gt; */&gt;+- </li>
+<li>比较运算： &lt;（小于）、&gt;（大于）高于（== 与!=）</li>
+</ul>
+<hr />
+<p>1-3 Scalar Array： 
+Perl数组变量和列表的概念，列表是包含在括号里的一序列的值，可以为任何数值，也可为空，并且列表存贮于Perl数组变量中，与简单变量不同，Perl数组变量以字符&rdquo;@&rdquo;打头。</p>
+<h1 id="2-perl">2 Perl数组变量和列表<a class="headerlink" href="#2-perl" title="Permanent link">&para;</a></h1>
+<h2 id="2-1">2-1 列表<a class="headerlink" href="#2-1" title="Permanent link">&para;</a></h2>
+<p>列表是包含在括号里的一序列的值，可以为任何数值，也可为空，如：</p>
+<pre><code>(1,5.3,&quot;hello&quot;,2)，空列表：()。
+</code></pre>
+
+<p>注：只含有一个数值的列表(如：(43.2))与该数值本身(即：43.2)是不同的，但它们可
+以互相转化或赋值。
+列表例：</p>
+<pre><code>(17,$var,&quot;astring&quot;)
+(17,26&lt;&lt;2)
+(17,$var1+$var2)
+($value,&quot;Theansweris$value&quot;)
+</code></pre>
+
+<h2 id="2-2-perl-">2-2 Perl数组&ndash;列表的存贮<a class="headerlink" href="#2-2-perl-" title="Permanent link">&para;</a></h2>
+<p>列表存贮于Perl数组变量中，与简单变量不同，Perl数组变量以字符&rdquo;@&rdquo;打头，如：</p>
+<pre><code>@array=(1,2,3);
+</code></pre>
+
+<p>注：
+1.Perl数组变量创建时初始值为空列表：()。<br />
+2.因为PERL用@和$来区分Perl数组变量和简单变量，所以同一个名字可以同时用于Perl
+数组变量和简单变量，如：</p>
+<pre><code>$var=1;
+@var=(11,27.1,&quot;astring&quot;);
+</code></pre>
+
+<p>但这样很容易混淆，故不推荐。</p>
+<h3 id="2-2-1-perl">2-2-1 Perl数组的存取<a class="headerlink" href="#2-2-1-perl" title="Permanent link">&para;</a></h3>
+<p>-对Perl数组中的值通过下标存取，第一个元素下标为0。试图访问不存在的Perl数组元
+素，则结果为NULL，但如果给超出Perl数组大小的元素赋值，则Perl数组自动增长，原
+来没有的元素值为NULL。如：</p>
+<pre><code>@array=(1,2,3,4);
+$scalar=$array[0];
+$array[3]=5;#now@arrayis(1,2,3,5)
+$scalar=$array[4];#now$scalar=null;
+$array[6]=17;#now@arrayis(1,2,3,5,&quot;&quot;,&quot;&quot;,17)
+</code></pre>
+
+<ul>
+<li>perl数组间拷贝  </li>
+</ul>
+<pre><code>@result=@original;
+</code></pre>
+
+<ul>
+<li>用Perl数组给列表赋值  </li>
+</ul>
+<pre><code>@list1=(2,3,4);
+@list2=(1,@list1,5);#@list2=(1,2,3,4,5)
+</code></pre>
+
+<ul>
+<li>perl数组对简单变量的赋值  </li>
+</ul>
+<pre><code>@array=(5,7,11);
+($var1,$var2)=@array; #$var1=5,$var2=7,11被忽略
+
+@array=(5,7);
+($var1,$var2,$var3)=@array; #$var1=5,$var2=7,$var3=&quot;&quot;(null)
+</code></pre>
+
+<ul>
+<li>从标准输入(STDIN)给变量赋值</li>
+</ul>
+<pre><code>var=&lt;STDIN&gt;;
+@array=&lt;STDIN&gt;;#^D为结束输入的符号
+</code></pre>
+
+<h3 id="2-2-2">2-2-2 字符串中的方括号和变量替换<a class="headerlink" href="#2-2-2" title="Permanent link">&para;</a></h3>
+<pre><code>&quot;$var[0]&quot;为Perl数组@var的第一个元素。
+&quot;$var\[0]&quot;将字符&quot;[&quot;转义，等价于&quot;$var&quot;.&quot;[0]&quot;，$var被变量替换，[0]保持不变。
+&quot;${var}[0]&quot;亦等价于&quot;$var&quot;.&quot;[0]&quot;。
+&quot;$\{var}&quot;则取消了大括号的变量替换功能，包含文字：${var}.
+</code></pre>
+
+<h3 id="2-2-3">2-2-3 列表范围<a class="headerlink" href="#2-2-3" title="Permanent link">&para;</a></h3>
+<pre><code>(1..10)=(1,2,3,4,5,6,7,8,9,10)
+(2,5..7,11)=(2,5,6,7,11)
+(3..3)=(3)
+</code></pre>
+
+<ul>
+<li>用于实数</li>
+</ul>
+<pre><code>(2.1..5.3)=(2.1,3.1,4.1,5.1)
+(4.5..1.6)=()
+</code></pre>
+
+<ul>
+<li>用于字符串</li>
+</ul>
+<pre><code>(&quot;aaa&quot;..&quot;aad&quot;)=(&quot;aaa&quot;,&quot;aab&quot;,&quot;aac&quot;,&quot;aad&quot;)
+@day_of_month=(&quot;01&quot;..&quot;31&quot;)
+</code></pre>
+
+<ul>
+<li>可包含变量或表达式</li>
+</ul>
+<pre><code>($var1..$var2+5)
+</code></pre>
+
+<ul>
+<li>小技巧：</li>
+</ul>
+<pre><code>$fred=&quot;Fred&quot;;
+print((&quot;Hello,&quot;.$fred.&quot;!\n&quot;)x2);
+其结果为：
+Hello,Fred!
+Hello,Fred!
+</code></pre>
+
+<h3 id="2-2-4-perl">2-2-4 Perl数组的输出：<a class="headerlink" href="#2-2-4-perl" title="Permanent link">&para;</a></h3>
+<pre><code class="perl">(1)@array=(1,2,3);
+print(@array,&quot;\n&quot;);
+结果为：
+123
+(2)@array=(1,2,3);
+print(&quot;@array\n&quot;);
+结果为：
+123
+</code></pre>
+
+<h3 id="2-2-5-perl">2-2-5 列表/Perl数组的长度<a class="headerlink" href="#2-2-5-perl" title="Permanent link">&para;</a></h3>
+<p>当Perl数组变量出现在预期简单变量出现的地方，则PERL解释器取其长度。</p>
+<pre><code class="perl">@array=(1,2,3);
+$scalar=@array;#$scalar=3,即@array的长度
+($scalar)=@array;#$scalar=1,即@array第一个元素的值
+</code></pre>
+
+<p>注：以Perl数组的长度为循环次数可如下编程：</p>
+<pre><code class="perl">$count=1;
+while($count&lt;=@array){
+    print(&quot;element$count:$array[$count-1]\n&quot;);
+    $count++;
+}
+</code></pre>
+
+<h3 id="2-2-6-perl">2-2-6 子Perl数组<a class="headerlink" href="#2-2-6-perl" title="Permanent link">&para;</a></h3>
+<pre><code class="perl">@array=(1,2,3,4,5);
+@subarray=@array[0,1];#@subarray=(1,2)
+@subarray2=@array[1..3];#@subarray2=(2,3,4)
+@array[0,1]=(&quot;string&quot;,46);#@array=(&quot;string&quot;,46,3,4,5)now
+@array[0..3]=(11,22,33,44);#@array=(11,22,33,44,5)now
+@array[1,2,3]=@array[3,2,4];#@array=(11,44,33,5,5)now
+@array[0..2]=@array[3,4];#@array=(5,5,&quot;&quot;,5,5)now
+</code></pre>
+
+<p>可以用子Perl数组形式来交换元素：</p>
+<pre><code>@array[1,2]=@array[2,1];
+</code></pre>
+
+<h3 id="2-2-7-perl">2-2-7 有关Perl数组的库函数<a class="headerlink" href="#2-2-7-perl" title="Permanent link">&para;</a></h3>
+<p>(1)sort&ndash;按字符顺序排序</p>
+<pre><code class="perl">@array=(&quot;this&quot;,&quot;is&quot;,&quot;a&quot;,&quot;test&quot;);
+@array2=sort(@array);#@array2=(&quot;a&quot;,&quot;is&quot;,&quot;test&quot;,&quot;this&quot;)
+@array=(70,100,8);
+@array=sort(@array);#@array=(100,70,8)now
+</code></pre>
+
+<p>(2)reverse&ndash;反转Perl数组</p>
+<pre><code class="perl">@array2=reverse(@array);
+@array2=reversesort(@array);
+</code></pre>
+
+<p>(3)chop&ndash;Perl数组去尾
+chop的意义是去掉STDIN（键盘）输入字符串时最后一个字符&ndash;换行符。而如果它作用到Perl数组上，则将Perl数组中每一个元素都做如此处理。</p>
+<pre><code class="perl">@list=(&quot;rabbit&quot;,&quot;12345&quot;,&quot;quartz&quot;);
+chop(@list);#@list=(&quot;rabbi&quot;,&quot;1234&quot;,&quot;quart&quot;)now
+</code></pre>
+
+<p>(4)join/split&ndash;连接/拆分
+join的第一个参数是连接所用的中间字符，其余则为待连接的字符Perl数组。</p>
+<pre><code class="perl">$string=join(&quot;&quot;,&quot;this&quot;,&quot;is&quot;,&quot;a&quot;,&quot;string&quot;);#结果为&quot;thisisastring&quot;
+@list=(&quot;words&quot;,&quot;and&quot;);
+$string=join(&quot;::&quot;,@list,&quot;colons&quot;);#结果为&quot;words::and::colons&quot;
+@array=split(/::/,$string);#@array=(&quot;words&quot;,&quot;and&quot;,&quot;colons&quot;)now
+</code></pre>
+
+<h2 id="2-3-hash-arrayassociative-array">2-3 Hash Array(Associative Array)：<a class="headerlink" href="#2-3-hash-arrayassociative-array" title="Permanent link">&para;</a></h2>
+<p>perl hash 常见用法 
+基本用法 </p>
+<ul>
+<li>初始化 %h为空数组</li>
+</ul>
+<pre><code> %h = {};
+</code></pre>
+
+<ul>
+<li>用数组初始化%h</li>
+</ul>
+<pre><code>a=&gt;1, b=&gt;2%h = ('a', 1, 'b', 2);
+</code></pre>
+
+<p>意义同上，只是另一种更形象化的写法。</p>
+<pre><code>%h = ('a'=&gt;1, 'b'=&gt;2);
+</code></pre>
+
+<p>如果key是字符串，可以省略引号。下面这行和上面那行是一样的</p>
+<pre><code>%h = (a=&gt;1, b=&gt;2);# 用{}来访问print &quot;$h{a}\n&quot;; 
+</code></pre>
+
+<ul>
+<li>打印</li>
+</ul>
+<pre><code>$h{b} = '2b';
+print &quot;$h{b}\n&quot;; # 打印2b
+</code></pre>
+
+<ul>
+<li>删除key</li>
+</ul>
+<pre><code>delete $h{b}; # 从$h删除'b' 
+</code></pre>
+
+<ul>
+<li>清空hash </li>
+</ul>
+<pre><code class="perl">undef %h
+</code></pre>
+
+<ul>
+<li>得到hash的所有键值 </li>
+</ul>
+<pre><code>#得到所有keys，顺序取决于hash函数，或者说是乱序 
+@all_keys = keys %h; 
+# 所有键值，是按hash的值从大往小排列的。值的比较是数字比较(比如说，10&gt;9) 
+@all_keys = sort{$h{$b}&lt;=&gt;$h{$a}} (keys %h); 
+# 所有键值，是按hash的值从小往大排列的。值的比较是数字比较 
+@all_keys = sort{$h{$a}&lt;=&gt;$h{$b}} (keys %h); 
+# 所有键值，是按hash的值从小往大排列的。值的比较是字符串比较（比如说，'10' &lt; '9'） 
+@all_keys = sort{$h{$a} cmp $h{$b}} (keys %h);
+</code></pre>
+
+<ul>
+<li>判断hash是否包含key   </li>
+</ul>
+<pre><code class="perl">exists($h{$key}); 
+</code></pre>
+
+<ul>
+<li>Hash的长度<br />
+想要知道一个hash存放多少数据   </li>
+</ul>
+<pre><code class="perl">$hash_size = keys %h 
+# 把%h的长度放到$hash_size中 
+print scalar kes %h, &quot;\n&quot; 
+# 打印%h的长度。这里用了scalar来返回数组长度。
+</code></pre>
+
+<ul>
+<li>遍历一个hash </li>
+</ul>
+<pre><code class="perl">while (my ($k, $v) = each %h){
+    print &quot;$k ---&gt; $v\n&quot;;
+}
+</code></pre>
+
+<ul>
+<li>Reference引用 
+Reference类似于C/C++的指针 </li>
+</ul>
+<pre><code class="perl">$h_ref = \%h; 
+# 获得一个hash的reference%aHash = %{$h_ref}; 
+# 把hash reference当成hash用$value = $h_ref-&gt;{akey} 
+# 这个和%h{akey}是一样的
+</code></pre>
+
+<ul>
+<li>传递hash到函数 
+一般都是传递一个reference到函数</li>
+</ul>
+<pre><code class="perl">%h = ();$h{a}=1;foo(\%h)print $h{b}, &quot;\n&quot;; 
+# 打印出2。这个值来自于函数foo() 
+sub foo {my ($h) = @_;print $h-&gt;{a}, &quot;\n&quot;; 
+# 打印出1$h-&gt;{b} = 2;}
+</code></pre>
+
+<ul>
+<li>函数返回hash，或者hash引用(hash reference) </li>
+</ul>
+<pre><code class="perl">sub foo {
+    my %fh;
+    $fh{a} = 1;
+    return %h;
+} 
+my %h = foo();
+</code></pre>
+
+<h1 id="3-control-statements">3 控制结构(Control Statements)<a class="headerlink" href="#3-control-statements" title="Permanent link">&para;</a></h1>
+<h2 id="3-1-if">3-1 选择 if结构<a class="headerlink" href="#3-1-if" title="Permanent link">&para;</a></h2>
+<p>Perl的条件控制叙述和C语言很像，让使用者很快就能掌握它。不过Perl比C语言又另外多了些实用的语法，我用底线标出来，大家一看便知。
+ Expression 就是条件叙述式，Perl和C一样没有定义布尔数据型态(Boolean datatype)， 
+ 因此 0 是false、非0 是ture。另外要注意字符串运算子和数值运算子要分清楚哦。 
+ Code Segment 就是用大括号括起来的一堆指令，也就是一个Block。 
+ ```perl
+if (Expression) {Code Segment} 
+if (Expression) {Code Segment} else {Code Segment} 
+if (Expression) {Code Segment} elsif (Expression) {Code Segment} else {CodeSegment} </p>
+<h1 id="elsif-else-if">elsif 就是 else if<a class="headerlink" href="#elsif-else-if" title="Permanent link">&para;</a></h1>
+<h1 id="statement">如果指令(statement)只有一项，我们可以使用倒装句法，看起来比较简洁。<a class="headerlink" href="#statement" title="Permanent link">&para;</a></h1>
+<p>statement if (Expression); </p>
+<h1 id="unless-if-not">unless 就是if not<a class="headerlink" href="#unless-if-not" title="Permanent link">&para;</a></h1>
+<p>statement unless (Expression);例： 
+print &ldquo;HELLO!\n&rdquo; if ($name eq &ldquo;friend&rdquo;); 
+$x-=10 if ($x == 100); </p>
+<pre><code>## 3-2 循环结构 
+Perl的循环控制叙述也和C语言很像，当然，照例Perl也另外多了些实用的语法： 
+```perl
+# 注意：纯量变数前面要加个 $ 字号，这一点和C语言不一样哦。 
+for($i=0; $i&lt;=10; $i++) {Code Segment}
+# foreach 是承袭UNIX的shell script来的， 
+# 第一个自变量是纯量变数，第二个自变量要用括号括起来，里面是一个纯量数组， 
+# 顾名思义它就是把数组中的每个元素依序传给第一个自变量，直到全部传完。 
+# 它和 for($i=0; $i&lt;=$#array; $i++) 用法虽然不同，但目的都是要取出数组的每个元素。 
+foreach $i (@array) {Code Segment} 
+# 其实在Perl中，for和foreach是可以混着用的，就看个的人习惯了。 
+# 下面这行就等于上面第一个叙述，不过简洁多了，大家可以试着用用看。 
+for $i (0..10) {Code Segment}
+# while控制循环和后置循环。 
+while($i&lt;=10) {Code Segment} 
+do {Code Segment} while(Expression); 
+# Perl也有和C语言的break和continue一样的指令，Perl叫它做 last 和 next (较口语化)。 
+# last是跳出现在所在的循环，next则是跳过下面的指令直接执行下一次的循环。 
+while(chomp($i=)) { 
+    next if ($i == 5); 
+    last unless ($i &gt; 10); 
+}
+</code></pre>
+
+<p>Perl 还有提供label(标记)的语法，也就是goto 指令，不过有经验的programer并不喜欢用它，我也不建议大家使用，所以就此按下不讲。有兴趣的人请自行查阅。还有一点值得注意的是Perl没有提供像C语言一样的 switch 叙述，不过Perl的pattern match的功能非常强，所以我建议你直接用 if else 叙述来做就好了。</p>
+<h2 id="3-3-subroutines">3-3 子程序(Subroutines)<a class="headerlink" href="#3-3-subroutines" title="Permanent link">&para;</a></h2>
+<ul>
+<li>(a) Syntax: sub NAME {Code} </li>
+<li>(b) 呼叫子程序： &amp;NAME(para1, para2,&hellip;) </li>
+<li>(c) 参数传递：@<em><br />
+Perl 和C一样是采用Call by value的方式，不过因为Perl不用事先宣告变量，所以建立子程序的时候也不用宣告要传递什么参数。当主程序在传递参数给子程序时，Perl会把括号括起来的参数按顺序放在一个特殊的全域变量 @</em> 数组中，然后子程序就可以随意使用数组 @_ 里的参数，</li>
+</ul>
+<pre><code class="perl">#例如 $_[0] 是第一个参数， $_[1] 是第二个，或是用 
+my($a1,$a2,$a3,...) = @_; #来取出各个参数
+my @arg=@_; # 和
+my %arg=@_; # 也是可以的。  
+</code></pre>
+
+<p>由于Perl的语法非常活泼，使得程序在维护时特别棘手，因此写批注成为一项很重要的工作。我建议你最好在每个子程序前面加上对这段子程序的描述，特别是需要传递的参数要注明清楚。 
+- (d) Variable Localization：my or local <br />
+通常我们在程序中定义的变量都是全域变量，所以在子程序中若要把变量区域化则要加上 my 或 local 关键词，例如：my $x=3;，<br />
+若子程序所用的变量名不小心和主程相同，Perl会以目前正在执行的子程序里的变量为优先。</p>
+<h2 id="3-4-io">3-4 I/O和档案处理<a class="headerlink" href="#3-4-io" title="Permanent link">&para;</a></h2>
+<ul>
+<li>(a) Syntax: </li>
+</ul>
+<pre><code class="perl">open(FILEHANDLE,&quot;Expression&quot;); 
+close(FILEHANDLE); 
+</code></pre>
+
+<p>这里的Expression是一个叙述加上文件名称，若Expression只有文件名称没有加上叙述，则预设是只读。Expressions叙述如下：</p>
+<pre><code class="perl">Expression    Effect 
+open(FH, &quot; filename&quot;) 
+open(FH, &quot;+filename&quot;) 
+open(FH, &quot;&gt;filename&quot;)      Opens filename for writing. 
+open(FH, &quot;+&gt;filename&quot;)    Opens filename for both reading and writing. 
+open(FH, &quot;&gt;&gt;filename&quot;)    Appends to filename. 
+open(FH, &quot;command|&quot;)     Runs the command and pipes its output to thefilehandle. 
+open(FH, &quot;command|&quot;)     Pipes the output along the filehandle to thecommand. 
+open(FH, &quot;-&quot;)     Opens STDIN. 
+open(FH, &quot;&gt;-&quot;)     Opens STDOUT. 
+open(FH, &quot;&lt;&amp;=N&quot;) Where N is a number, this performs the equivalent of C'sfdopen for reading. 
+open(FH, &quot;&gt;&amp;=N&quot;)  Where N is a number, this performs the equivalent of C'sfdopen for writing. 
+</code></pre>
+
+<p>例： </p>
+<pre><code class="perl"># 开启$filename这个档案，若开启失败则印出die后面的讯息，并结束程序。 
+open(FILE, $filename) || die &quot;Can't open file $filename : $!\n&quot;;
+# 下面是一个十分精简的写法，和 while($_=){print &quot;$_&quot;;} 是等效的。 
+print while();
+# 档案开启后要记得随手关闭，这才是写程序的好习惯。 
+close(FILE);
+</code></pre>
+
+<p>$!和$_都是Perl的特殊变数，下面会介绍的。
+- (b) Input：<br />
+Perl没有特别用来输入的函数，因为Perl在执行程序时，会自动开启标准输入装置，其filehandle定为STDIN，所以在Perl中要输入数据的方法就是使用：</p>
+<pre><code class="perl"># Perl不会自动去掉结尾的CR/LF，跟C语言不同，所以要用chomp函数帮你去掉它。 
+$input=&lt;STDIN&gt;; chomp $input; 
+# 下面是较简洁的写法。 
+chomp($input=&lt;STDIN&gt;);
+</code></pre>
+
+<ul>
+<li>(c) Output： </li>
+</ul>
+<pre><code class="perl">print &quot;variables or 字符串&quot;; 
+</code></pre>
+
+<p>Perl也有printf()函数，语法和C语言一模一样，我就不多做介绍了。Perl另外有个print函数，比printf()更方便、更好用，包你爱不释手。Output不外乎是输出到屏幕或档案，用例子来说明比较容易了解。</p>
+<pre><code class="perl"># 不用再指定变量的data type，这样不是比printf()方便多了吗? 
+print &quot;Scalar value is $x\n&quot;;
+# . 是字符串加法的运算子，上下这两行是等效的。 
+print &quot;Scalar value is &quot; . $x . &quot;\n&quot;;
+# 输出到档案的方法。 
+print FILE &quot;print $x to a file.&quot;;
+# 下面是print的特殊用法，学自shell script的用法： 
+print&lt;XXX
+</code></pre>
+
+<p>这招叫做 here document，XXX可以是你取的任何标识符，在标识符之间的字都会按照你所写的样子输出，就像\标签一样。而当一行的开头是XXX你取的这个标识符时，才会停止输出。 </p>
+<p>Perl 也有和 C 一样以 &ldquo;" 开头的特殊字符： </p>
+<pre><code>\t    tab 
+\n    newline 
+\r    return 
+\f    form feed 
+\b    backspace 
+\a    alarm(bell) 
+\e    escape 
+\033  octalchar 
+\x1b  hex char 
+\c[   control char 
+\l    lowercase next char 
+\u    uppercase next char 
+\L    lowercase till \E 
+\U    uppercase till \E 
+\E    end case modification 
+\Q    quoteregexp metacharacters till \E
+</code></pre>
+
+<p>另外需要说明的是 Perl 融合了unix shell script的使用惯例，以双引号(&ldquo;&rdquo;)括起来的字符串会先经过展开，但反斜线()后面的字符则不展开，当作一般字符看待。<br />
+而以单引号(&lsquo;&rsquo;)括起来的字符串完全不会展开，以反单引号(``)括起来的字符串会把它当作命令列指令一样执行，等于system()一样。<br />
+初学者常常会搞混，但习惯之后就会觉得不这样分清楚反而不行哩，举个例吧： </p>
+<pre><code class="perl">$x=&quot;ls -l&quot;; 
+print &quot;$x&quot;;             # Output ls -l 
+print &quot;\$x&quot;;            # Output $x 
+print '$x';             # Output $x 
+print `$x`;             # Output files in this directory
+</code></pre>
+
+<hr />
+<h1 id="4">4 函数<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
+<h2 id="4-1-perl">4-1 Perl函数<a class="headerlink" href="#4-1-perl" title="Permanent link">&para;</a></h2>
+<p>通过 &amp; 调用</p>
+<h2 id="4-2-perl">4-2 Perl参数<a class="headerlink" href="#4-2-perl" title="Permanent link">&para;</a></h2>
+<pre><code>Perl天然支持可变数目个参数。
+在函数内部，所有参数按顺序放在数组 @_ 中，在函数内部，$_[0] 表示函数的第一个
+参数，其余类推。
+</code></pre>
+
+<h2 id="4-3-shift">4-3 shift<a class="headerlink" href="#4-3-shift" title="Permanent link">&para;</a></h2>
+<p>shift 后跟一个数组，表示将数组的第一个值返回。数组也被改变，其第一个元素被弹
+出。
+演示代码一(求最大值): </p>
+<pre><code class="perl">#!/usr/bin/perl -w 
+use strict; 
+# 调用函数max，取得一组数值的最大值,并输出。 
+my $maxCnt = &amp;max(11,22,33); 
+print &quot;maxCnt=$maxCnt\n&quot;;
+sub max { 
+# 采用遍历算法。先将参数中的第一个值赋给$currentMaxCnt。 
+# @_ 是默认的包含本函数所有参数 [如(11,22,33)]的数组。 
+# shift @_ 有两个结果: 1. 将数组 @_ 中的第一个值做为返回值(赋给了
+$currentMaxCnt). 2. 将@_数组第一个值弹出[此后@_的值变为(22,33)]. 
+my $currentMaxCnt = shift @_; 
+# 函数中使用shift时，@_可以省略。上面代码也可以写成这样。 
+#  my $currentMaxCnt = shift;
+# 遍历整个@_数组。 
+foreach ( @_ ) { 
+# $_ 表示数组@_中当前被遍历到的元素. 
+    if ( $_ &gt; $currentMaxCnt ) { 
+    # 如果发现当前数组元素比$currentMaxCnt大，那就将$currentMaxCnt重新赋值为当前元素。 
+    $currentMaxCnt = $_; 
+    } 
+} 
+# 函数返回值为标量$currentMaxCnt. 
+return $currentMaxCnt; 
+}
+</code></pre>
+
+<p>演示代码二(求和): </p>
+<pre><code class="perl">#!/usr/bin/perl -w 
+use strict;
+# 求一组数的和并打印。 
+my $s1 = &amp;sumvar(11,22,33); 
+my $s2 = &amp;sumarg(22,33,44); 
+my $s3 = &amp;sumgod(11,22,33,44,55); 
+print &quot;s1=$s1, s2=$s2, s3=$s3\n&quot;;
+# 办法1 
+sub sumvar { 
+# 将参数数组的前三个元素值相应地赋给($first, $second, $third) 
+    (my $first, my $second, my $third) = @_; 
+    # 返回其和值。缺点: 如果是求四个参数的和，依然只能给出前三个的和。 
+    return $first + $second + $third; 
+}
+# 办法2 
+sub sumarg { 
+    # $_[0] 表示参数数组@_的第一个元素。其余类推。 
+    my $first = $_[0]; 
+    my $second = $_[1]; 
+    my $third = $_[2]; 
+    # 返回其和值。缺点: 同sumvar. 只是通过这里学习 $_[0] 这种用法。 
+    return $first + $second + $third; 
+}
+# 办法3, 参数可以任意多。都能求其和。 
+sub sumgod{ 
+    my $s = shift @_; 
+    foreach ( @_ ) { 
+        $s = $s + $_; 
+    } 
+    # 同前面函数max。 
+    return $s; 
+}
+</code></pre>
+
+<h1 id="5">5 总结<a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
+<p>整理了一下自己觉得用的比较多的一些符号、用法、函数、库之类的，这些都是很基本
+的，但是“背熟”了，对提高效率会很有帮助。</p>
+<h2 id="5-1">5-1 数据操作<a class="headerlink" href="#5-1" title="Permanent link">&para;</a></h2>
+<pre><code class="perl">* $ - 声明与引用用一个scalar的变量 
+* @ - 声明与引用一个list，但是当访问一个list的成员时，需使用$ListName[index] 
+* % - 声明与引用一个hash表，但是当访问一个hash的成员时，需要使用$HashName{key}  
+</code></pre>
+
+<h2 id="5-2">5-2 特殊变量<a class="headerlink" href="#5-2" title="Permanent link">&para;</a></h2>
+<pre><code class="perl">* $0 - 当前运行脚本的文件名 
+* @ARGV - 当前运行脚本的命令行参数列表 
+* $_ - 默认变量，如循环中的当前变量 
+* @_ - 函数的输入参数列表 
+* %ENV - 系统的环境变量 
+* @INC - Perl的Include路径列表，我们可以往该列表中添加我们自己的目录来方便引
+用自定义的库 
+* $! - 当前系统提示，错误信息 
+* $^O - 操作系统的名字 
+* STDIN,STDOUT,STDERR - 输入输出的默认句柄，可以作一定的自定义 
+* =&gt; - 声明一个hash时可以用来明确的表示出key=&gt;value的对应关系 
+* $^I- 指定备份的文件的后缀名，如此，被修改的文件将会自动以该后缀名保存一个副
+本
+</code></pre>
+
+<h2 id="5-3">5-3 特殊用法<a class="headerlink" href="#5-3" title="Permanent link">&para;</a></h2>
+<pre><code class="perl">&amp;Sub - 调用一个函数，虽然Perl有些规则让你在某些时候可以省略这里的&amp;符号，但是处于一致性考虑，所以自定义的函数的调用，我一律采用此种方式。 
+$# - 用来取得模个数组的最大index, 一般情况下，也可以用-1来表示最后一个元素的index的 
+qw() - 快速声明一个字符串数组，可以省略那些烦人的引号
+</code></pre>
+
+<h2 id="5-4">5-4 正则表达式<a class="headerlink" href="#5-4" title="Permanent link">&para;</a></h2>
+<pre><code>$ - 获取被括号捕获的匹配 
+$`, $&amp;, $' - 获取匹配的字符串，以及其前后两个部分 
+^,$ - 字符串的始末位置，用作定位
+</code></pre>
+
+<h2 id="5-5">5-5 常用函数<a class="headerlink" href="#5-5" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>pop, push, shift, unshift, reverse - list的操作函数 
+ keys，values, exists, each, delete - hash的操作函数 
+ chomp, split, join, index, substr, sort - 字符串操作函数 
+ sprintf,printf, print - 格式化输出函数 
+ system, exec, `` - 系统命令调用函数 
+ glob, unlink, mkdir, rmdir, rename,chmod,chown, open, close, opendir,
+closedir - 文件系统操作函数 
+ stat, lstat,localtime,gmtime,utime - 文档属性，时间相关函数 
+ hex, oct - 二进制，八进制，十六进制数转化成十进制的函数 
+ grep, map - list高级操作函数</p>
+</blockquote>
+<p>这些函数的详细介绍，都可以通过以下命令查到： </p>
+<pre><code>#perldoc -f functionname 
+</code></pre>
+
+<h2 id="5-5_1">5-5 常用库<a class="headerlink" href="#5-5_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<ul>
+<li>File::Basename - 根据path获取文件名或者文件路径   </li>
+<li>File::Spec - 根据文件名与路径组合成全路经  </li>
+<li>File::Find - 递归遍历某个目录下所有文件 </li>
+<li>XML::Simple - 以一个复杂的结构来表示xml文件，使用起来相当方便 </li>
+<li>Time::HiRes - 经常用来计算一个操作所耗费的时间 </li>
+<li>Getopt::Long - 当脚本需要复杂的输入参数与选项时用到 </li>
+<li>Cwd - 拿到当前工作目录 </li>
+<li>IO::File - 文件操作 </li>
+<li>Win32 - 当需要调用一些Windows API时我会用它</li>
+</ul>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../regexp/零宽断言/" class="btn btn-neutral float-right" title="零宽断言">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../python/flake8/" class="btn btn-neutral" title="flake8"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../python/flake8/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../regexp/零宽断言/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

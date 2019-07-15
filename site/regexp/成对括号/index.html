@@ -72,6 +72,14 @@
                     
     <a class="" href="../../linux/后台运行/">linux后台运行</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/tmux/">tmux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/git/">git</a>
+                </li>
     </ul>
 	    </li>
           
@@ -82,6 +90,14 @@
                 <li class="">
                     
     <a class="" href="../../nas/nas/">nas</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/ipkg/">ipkg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/frp/">frp</a>
                 </li>
     </ul>
 	    </li>
@@ -97,6 +113,10 @@
                 <li class="">
                     
     <a class="" href="../../vim/vunble/">vunble</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/powershell-vim/">在PowerShell中使用Vim</a>
                 </li>
     </ul>
 	    </li>
@@ -144,6 +164,21 @@
                     
     <a class="" href="../../python/python unittest/">python的unittest单元测试框架断言整理汇总</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../python/flake8/">flake8</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">perl</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../perl/基本语法/">基本语法</a>
+                </li>
     </ul>
 	    </li>
           
@@ -176,6 +211,10 @@
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../常用正则/">常用正则</a>
                 </li>
     </ul>
 	    </li>
@@ -216,7 +255,7 @@
           <div role="main">
             <div class="section">
               
-                <h4 id="322">3.2.2 <strong>匹配成对括号</strong></h4>
+                <h4 id="322">3.2.2 <strong>匹配成对括号</strong><a class="headerlink" href="#322" title="Permanent link">&para;</a></h4>
 <p>在大多数系统中，正则表达式无法匹配<strong>任意深度</strong>的嵌套结构</p>
 <p>但可以构造出匹配<strong>特定深度</strong>的嵌套结构</p>
 <p>利用perl的<code>string * count</code>算符，可以构造出适应<code>$depth</code>层的正则表达式</p>
@@ -228,7 +267,7 @@
 </ol>
 <p><code>$pattern = '#^((?:(?:(?1)|))+)$#m';</code></p>
 <p><a href="https://blog.csdn.net/technofiend/article/details/49906755">PHP 正则递归参考</a></p>
-<h5 id="_1">补充</h5>
+<h5 id="_1">补充<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
 <p>python 不支持正则平衡组，但可以使用pyparsing</p>
 <pre><code class="python">from pyparsing import nestedExpr
 
@@ -239,11 +278,11 @@ print(nestedExpr().parseString(data).asList())
 
 <p>javascript 不支持正则平衡组
 已知C#支持正则平衡组</p>
-<h4 id="_2">观点待查证</h4>
+<h4 id="_2">观点待查证<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>正则表达式是图灵不完备的，甚至不支持上下文相关语法</li>
 </ul>
-<h4 id="_3">参考</h4>
+<h4 id="_3">参考<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="http://www.cppblog.com/vczh/archive/2008/05/22/50763.html">构造正则表达式引擎》新鲜出炉啦！- VCZH</a></li>
 <li><a href="https://regex101.com/r/bJive9/1">在线正则解析</a></li>
@@ -255,6 +294,8 @@ print(nestedExpr().parseString(data).asList())
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../常用正则/" class="btn btn-neutral float-right" title="常用正则">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../零宽断言/" class="btn btn-neutral" title="零宽断言"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -285,6 +326,8 @@ print(nestedExpr().parseString(data).asList())
       
         <span><a href="../零宽断言/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../常用正则/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

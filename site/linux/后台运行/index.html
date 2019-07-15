@@ -98,6 +98,14 @@
 
     </ul>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../tmux/">tmux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../git/">git</a>
+                </li>
     </ul>
 	    </li>
           
@@ -108,6 +116,14 @@
                 <li class="">
                     
     <a class="" href="../../nas/nas/">nas</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/ipkg/">ipkg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/frp/">frp</a>
                 </li>
     </ul>
 	    </li>
@@ -123,6 +139,10 @@
                 <li class="">
                     
     <a class="" href="../../vim/vunble/">vunble</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/powershell-vim/">在PowerShell中使用Vim</a>
                 </li>
     </ul>
 	    </li>
@@ -170,6 +190,21 @@
                     
     <a class="" href="../../python/python unittest/">python的unittest单元测试框架断言整理汇总</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../python/flake8/">flake8</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">perl</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../perl/基本语法/">基本语法</a>
+                </li>
     </ul>
 	    </li>
           
@@ -184,6 +219,10 @@
                 <li class="">
                     
     <a class="" href="../../regexp/成对括号/">成对括号</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/常用正则/">常用正则</a>
                 </li>
     </ul>
 	    </li>
@@ -224,33 +263,33 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="linux">linux后台运行和关闭、查看后台任务</h2>
-<h3 id="1">1. &amp;</h3>
+                <h2 id="linux">linux后台运行和关闭、查看后台任务<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. &amp;<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>加在一个命令的最后，可以把这个命令放到后台执行，如</p>
 <pre><code>watch  -n 10 sh  test.sh  &amp;  #每10s在后台执行一次test.sh脚本
 </code></pre>
 
-<h3 id="2-ctrlz">2. ctrl+z</h3>
+<h3 id="2-ctrlz">2. ctrl+z<a class="headerlink" href="#2-ctrlz" title="Permanent link">&para;</a></h3>
 <p>可以将一个正在前台执行的命令放到后台，并且处于暂停状态</p>
-<h3 id="3-jobs">3. jobs</h3>
+<h3 id="3-jobs">3. jobs<a class="headerlink" href="#3-jobs" title="Permanent link">&para;</a></h3>
 <p>查看当前有多少在后台运行的命令
 jobs -l选项可显示所有任务的PID，jobs的状态可以是running, stopped, Terminated。但是如果任务被终止了（kill），shell 从当前的shell环境已知的列表中删除任务的进程标识。</p>
-<h3 id="4-fg">4. fg</h3>
+<h3 id="4-fg">4. fg<a class="headerlink" href="#4-fg" title="Permanent link">&para;</a></h3>
 <p>将后台中的命令调至<strong>前台</strong>继续运行。</p>
 <p>如果后台中有多个命令，可以用fg %jobnumber（是命令编号，不是进程号）将选中的命令调出。
 <img alt="image" src="https://images0.cnblogs.com/blog/408927/201409/182233000819052.png" /></p>
-<h3 id="5-bg">5. bg</h3>
+<h3 id="5-bg">5. bg<a class="headerlink" href="#5-bg" title="Permanent link">&para;</a></h3>
 <p>将一个在<strong>后台</strong>暂停的命令，变成在后台继续执行。如果后台中有多个命令，可以用bg %jobnumber将选中的命令调出。</p>
-<h3 id="6-kill">6. kill</h3>
+<h3 id="6-kill">6. kill<a class="headerlink" href="#6-kill" title="Permanent link">&para;</a></h3>
 <p>法子1：通过jobs命令查看job号（假设为num），然后执行kill %num</p>
 <p>法子2：通过ps命令查看job的进程号（PID，假设为pid），然后执行kill pid
 前台进程的终止：Ctrl+c</p>
-<h3 id="7-nohup">7. nohup</h3>
+<h3 id="7-nohup">7. nohup<a class="headerlink" href="#7-nohup" title="Permanent link">&para;</a></h3>
 <p>如果让程序始终在后台执行，即使关闭当前的终端也执行（之前的&amp;做不到），这时候需要nohup。该命令可以在你退出帐户/关闭终端之后继续运行相应的进程。关闭中断后，在另一个终端jobs已经无法看到后台跑得程序了，此时利用ps（进程查看命令）</p>
 <pre><code>ps -aux | grep &quot;test.sh&quot;  #a:显示所有程序 u:以用户为主的格式来显示 x:显示所有程序，不以终端机来区分
 </code></pre>
 
-<h3 id="8-tmux">8. tmux</h3>
+<h3 id="8-tmux">8. tmux<a class="headerlink" href="#8-tmux" title="Permanent link">&para;</a></h3>
 <p>借用tmux实现后台运行</p>
 <blockquote>
 <p>github图床测试
@@ -263,7 +302,7 @@ jobs -l选项可显示所有任务的PID，jobs的状态可以是running, stoppe
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../nas/nas/" class="btn btn-neutral float-right" title="nas">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tmux/" class="btn btn-neutral float-right" title="tmux">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../sed-single-line-command/" class="btn btn-neutral" title="sed单行命令合集"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -295,7 +334,7 @@ jobs -l选项可显示所有任务的PID，jobs的状态可以是running, stoppe
         <span><a href="../sed-single-line-command/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../nas/nas/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../tmux/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

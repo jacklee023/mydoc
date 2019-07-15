@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>awk - pyv wiki</title>
+  <title>常用正则 - pyv wiki</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "awk";
-    var mkdocs_page_input_path = "linux\\awk.md";
+    var mkdocs_page_name = "\u5e38\u7528\u6b63\u5219";
+    var mkdocs_page_input_path = "regexp\\\u5e38\u7528\u6b63\u5219.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -54,34 +54,31 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../scp/">scp</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">awk</a>
-    <ul class="subnav">
-            
-    </ul>
+    <a class="" href="../../linux/scp/">scp</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../sed/">sed</a>
+    <a class="" href="../../linux/awk/">awk</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../sed-single-line-command/">sed单行命令合集</a>
+    <a class="" href="../../linux/sed/">sed</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../后台运行/">linux后台运行</a>
+    <a class="" href="../../linux/sed-single-line-command/">sed单行命令合集</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../tmux/">tmux</a>
+    <a class="" href="../../linux/后台运行/">linux后台运行</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../git/">git</a>
+    <a class="" href="../../linux/tmux/">tmux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/git/">git</a>
                 </li>
     </ul>
 	    </li>
@@ -191,15 +188,29 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../regexp/零宽断言/">零宽断言</a>
+    <a class="" href="../零宽断言/">零宽断言</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../regexp/成对括号/">成对括号</a>
+    <a class="" href="../成对括号/">成对括号</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../regexp/常用正则/">常用正则</a>
+    <a class="current" href="./">常用正则</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">常用正则参考</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#1">1. 校验密码强度</a></li>
+        
+            <li><a class="toctree-l4" href="#2">2. 校验中文</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -226,11 +237,11 @@
     
       
         
-          <li>Linux &raquo;</li>
+          <li>正则表达式 &raquo;</li>
         
       
     
-    <li>awk</li>
+    <li>常用正则</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -240,184 +251,110 @@
           <div role="main">
             <div class="section">
               
-                <table>
-<thead>
-<tr>
-<th>awk变量</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$0</td>
-<td>当前记录（这个变量中存放着整个行的内容）</td>
-</tr>
-<tr>
-<td>$1~$n</td>
-<td>当前记录的第n个字段，字段间由FS分隔</td>
-</tr>
-<tr>
-<td>FS</td>
-<td>输入字段分隔符 默认是空格或Tab</td>
-</tr>
-<tr>
-<td>NF</td>
-<td>当前记录中的字段个数，就是有多少列</td>
-</tr>
-<tr>
-<td>NR</td>
-<td>已经读出的记录数，就是行号，从1开始，如果有多个文件话，这个值也是不断累加中</td>
-</tr>
-<tr>
-<td>FNR</td>
-<td>当前记录数，与NR不同的是，这个值会是各个文件自己的行号</td>
-</tr>
-<tr>
-<td>RS</td>
-<td>输入的记录分隔符， 默认为换行符</td>
-</tr>
-<tr>
-<td>OFS</td>
-<td>输出字段分隔符， 默认也是空格</td>
-</tr>
-<tr>
-<td>ORS</td>
-<td>输出的记录分隔符，默认为换行符</td>
-</tr>
-<tr>
-<td>FILENAME</td>
-<td>当前输入文件的名字</td>
-</tr>
-</tbody>
-</table>
-<pre><code>&gt;   netstat &gt; netstat.txt
-$ awk '{print $1, $4}' netstat.txt
-$ awk '{printf &quot;%-8s %-8s %-8s %-18s %-22s %-15s\n&quot;,$1,$2,$3,$4,$5,$6}' netstat.txt
-$ awk '$3==0 &amp;&amp; $6==&quot;LISTEN&quot; ' netstat.txt
+                <h2 id="_1">常用正则参考<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 校验密码强度<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间。</p>
+<p><code>^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$</code></p>
+<h3 id="2">2. 校验中文<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>字符串仅能是中文。</p>
+<p><code>^[\\u4e00-\\u9fa5]{0,}$</code></p>
+<ol>
+<li>由数字、26个英文字母或下划线组成的字符串</li>
+</ol>
+<p><code>^\\w+$</code></p>
+<ol>
+<li>校验E-Mail 地址</li>
+</ol>
+<p>同密码一样，下面是E-mail地址合规性的正则检查语句。</p>
+<pre><code>[\\w!#$%&amp;'*+/=?^_`{|}~-]+(?:\\.[\\w!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?
 </code></pre>
 
 <ol>
-<li>指定分隔符</li>
+<li>校验身份证号码</li>
 </ol>
-<pre><code>awk  'BEGIN{FS=&quot;:&quot;} {print $1,$3,$6}' /etc/passwd
-</code></pre>
-
-<p>等价于</p>
-<pre><code>awk  -F: '{print $1,$3,$6}' /etc/passwd
-</code></pre>
-
+<p>下面是身份证号码的正则校验。15 或 18位。</p>
+<p>15位：</p>
+<p><code>^[1-9]\\d{7}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}$</code></p>
+<p>18位：</p>
+<p><code>^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}([0-9]|X)$</code></p>
 <ol>
-<li>多个分隔符</li>
+<li>校验日期</li>
 </ol>
-<pre><code>awk -F '[;:]'
-</code></pre>
-
+<p>“yyyy-mm-dd“ 格式的日期校验，已考虑平闰年。</p>
+<p><code>^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$</code></p>
 <ol>
-<li>分隔符输出</li>
+<li>校验金额</li>
 </ol>
-<pre><code>$ awk  -F: '{print $1,$3,$6}' OFS=&quot;\t&quot; /etc/passwd
-</code></pre>
-
+<p>金额校验，精确到2位小数。</p>
+<p><code>^[0-9]+(.[0-9]{2})?$</code></p>
 <ol>
-<li>字符串匹配</li>
+<li>校验手机号</li>
 </ol>
-<pre><code>awk '$6 ~ /FIN/ || NR==1 {print NR,$4,$5,$6}' OFS=&quot;\t&quot; netstat.txt
-awk '$6 ~ /WAIT/ || NR==1 {print NR,$4,$5,$6}' OFS=&quot;\t&quot; netstat.txt
-#sed风格匹配
-awk '/LISTEN/' netstat.txt
-#复杂模式匹配
-awk '$6 ~ /FIN|TIME/ || NR==1 {print NR,$4,$5,$6}' OFS=&quot;\t&quot; netstat.txt
-#模式取反
-awk '$6 !~ /WAIT/ || NR==1 {print NR,$4,$5,$6}' OFS=&quot;\t&quot; netstat.txt
-awk '!/WAIT/' netstat.txt
-</code></pre>
-
+<p>下面是国内 13、15、18开头的手机号正则表达式。（可根据目前国内收集号扩展前两位开头号码）</p>
+<p><code>^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$</code></p>
 <ol>
-<li>拆分文件</li>
+<li>判断IE的版本</li>
 </ol>
-<pre><code>#按第六列拆分文件，NR!=1表示不处理表头
-awk 'NR!=1{print &gt; $6}' netstat.txt
-#按指定列输出
-awk 'NR!=1{print $4,$5 &gt; $6}' netstat.txt
-#更复杂的例子
-awk 'NR!=1{if($6 ~ /TIME|ESTABLISHED/) print &gt; &quot;1.txt&quot;;
-else if($6 ~ /LISTEN/) print &gt; &quot;2.txt&quot;;
-else print &gt; &quot;3.txt&quot; }' netstat.txt
-</code></pre>
-
+<p>IE目前还没被完全取代，很多页面还是需要做版本兼容，下面是IE版本检查的表达式。</p>
+<p><code>^.*MSIE [5-8](?:\\.[0-9]+)?(?!.*Trident\\/[5-9]\\.0).*$</code></p>
 <ol>
-<li>统计</li>
+<li>校验IP-v4地址</li>
 </ol>
-<pre><code>#计算所有的C文件，CPP文件和H文件的文件大小总和。
-ls -l  *.cpp *.c *.h | awk '{sum+=$5} END {print sum}'
-#统计各个connection状态
-awk 'NR!=1{a[$6]++;} END {for (i in a) print i &quot;, &quot; a[i];}' netstat.txt
-#统计每个用户的进程占了多少内存
-ps aux | awk 'NR!=1{a[$1]+=$6;} END { for(i in a) print i &quot;, &quot; a[i]&quot;KB&quot;;}'
-</code></pre>
-
+<p>IP4 正则语句。</p>
+<p><code>\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b</code></p>
 <ol>
-<li>awk脚本</li>
+<li>校验IP-v6地址</li>
 </ol>
-<pre><code>#范例文件
-cat score.txt
-Marry   2143 78 84 77
-Jack    2321 66 78 45
-Tom     2122 48 77 71
-Mike    2537 87 97 95
-Bob     2415 40 57 62
-
-#awk脚本
-$ cat cal.awk
-#!/bin/awk -f
-#运行前
-BEGIN {
-    math = 0
-    english = 0
-    computer = 0
-
-    printf &quot;NAME    NO.   MATH  ENGLISH  COMPUTER   TOTAL\n&quot;
-    printf &quot;---------------------------------------------\n&quot;
-}
-#运行中
+<p>IP6 正则语句。</p>
+<p><code>(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))</code></p>
+<ol>
+<li>检查URL的前缀</li>
+</ol>
+<p>应用开发中很多时候需要区分请求是HTTPS还是HTTP，通过下面的表达式可以取出一个url的前缀然后再逻辑判断。</p>
+<p>if (!s.match(/^[a-zA-Z]+:\/\//))
 {
-    math+=$3
-    english+=$4
-    computer+=$5
-    printf &quot;%-6s %-6s %4d %8d %8d %8d\n&quot;, $1, $2, $3,$4,$5, $3+$4+$5
-}
-#运行后
-END {
-    printf &quot;---------------------------------------------\n&quot;
-    printf &quot;  TOTAL:%10d %8d %8d \n&quot;, math, english, computer
-    printf &quot;AVERAGE:%10.2f %8.2f %8.2f\n&quot;, math/NR, english/NR, computer/NR
-}
-</code></pre>
-
-<p>执行：</p>
-<pre><code>awk -f cal.awk score.txt
-#或
-./cal.awk score.txt
-</code></pre>
-
+    s = &lsquo;http://&rsquo; + s;
+}</p>
 <ol>
-<li>环境变量 通过-v参数</li>
+<li>提取URL链接</li>
 </ol>
-<pre><code> awk -v val=$x '{print $1, $2, $3, $4+val, $5+ENVIRON[&quot;y&quot;]}' OFS=&quot;\t&quot; score.txt
-</code></pre>
-
+<p>下面的这个表达式可以筛选出一段文本中的URL。</p>
+<p><code>^(f|ht){1}(tp|tps):\\/\\/([\\w-]+\\.)+[\\w-]+(\\/[\\w- ./?%&amp;=]*)?</code></p>
 <ol>
-<li>几个例子</li>
+<li>文件路径及扩展名校验</li>
 </ol>
-<pre><code>#从file文件中找出长度大于80的行
-awk 'length&gt;80' file
-
-#按连接数查看客户端IP
-netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr
-
-#打印99乘法表
-seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i&lt;=NF;i++)printf(&quot;%dx%d=%d%s&quot;, i, NR, i*NR, i==NR?&quot;\n&quot;:&quot;\t&quot;)}'
-</code></pre>
+<p>验证windows下文件路径和扩展名（下面的例子中为.txt文件）</p>
+<p><code>^([a-zA-Z]\\:|\\\\)\\\\([^\\\\]+\\\\)*[^\\/:*?"&lt;&gt;|]+\\.txt(l)?$</code></p>
+<ol>
+<li>提取Color Hex Codes</li>
+</ol>
+<p>有时需要抽取网页中的颜色代码，可以使用下面的表达式。</p>
+<p><code>^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$</code></p>
+<ol>
+<li>提取网页图片</li>
+</ol>
+<p>假若你想提取网页中所有图片信息，可以利用下面的表达式。</p>
+<p><code>\\&lt; *[img][^\\\\&gt;]*[src] *= *[\\"\\']{0,1}([^\\"\\'\\ &gt;]*)</code></p>
+<ol>
+<li>提取页面超链接</li>
+</ol>
+<p>提取html中的超链接。</p>
+<p><code>(&lt;a\\s*(?!.*\\brel=)[^&gt;]*)(href="https?:\\/\\/)((?!(?:(?:www\\.)?'.implode('|(?:www\\.)?', $follow_list).'))[^"]+)"((?!.*\\brel=)[^&gt;]*)(?:[^&gt;]*)&gt;</code></p>
+<ol>
+<li>查找CSS属性</li>
+</ol>
+<p>通过下面的表达式，可以搜索到相匹配的CSS属性。</p>
+<p><code>^\\s*[a-zA-Z\\-]+\\s*[:]{1}\\s[a-zA-Z0-9\\s.#]+[;]{1}</code></p>
+<ol>
+<li>抽取注释</li>
+</ol>
+<p>如果你需要移除HMTL中的注释，可以使用如下的表达式。</p>
+<p><code>&lt;!--(.*?)--&gt;</code></p>
+<ol>
+<li>匹配HTML标签</li>
+</ol>
+<p>通过下面的表达式可以匹配出HTML中的标签属性。</p>
+<p><code>&lt;\\/?\\w+((\\s+\\w+(\\s*=\\s*(?:".*?"|'.*?'|[\\^'"&gt;\\s]+))?)+\\s*|\\s*)\\/?&gt;</code></p>
               
             </div>
           </div>
@@ -425,10 +362,8 @@ seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i&lt;=NF;i++)printf(&quot;%dx%d=%d%s&
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sed/" class="btn btn-neutral float-right" title="sed">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../scp/" class="btn btn-neutral" title="scp"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../成对括号/" class="btn btn-neutral" title="成对括号"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -454,10 +389,8 @@ seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i&lt;=NF;i++)printf(&quot;%dx%d=%d%s&
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../scp/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../成对括号/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../sed/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

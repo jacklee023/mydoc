@@ -78,6 +78,14 @@
                     
     <a class="" href="../后台运行/">linux后台运行</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../tmux/">tmux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../git/">git</a>
+                </li>
     </ul>
 	    </li>
           
@@ -88,6 +96,14 @@
                 <li class="">
                     
     <a class="" href="../../nas/nas/">nas</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/ipkg/">ipkg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/frp/">frp</a>
                 </li>
     </ul>
 	    </li>
@@ -103,6 +119,10 @@
                 <li class="">
                     
     <a class="" href="../../vim/vunble/">vunble</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/powershell-vim/">在PowerShell中使用Vim</a>
                 </li>
     </ul>
 	    </li>
@@ -150,6 +170,21 @@
                     
     <a class="" href="../../python/python unittest/">python的unittest单元测试框架断言整理汇总</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../python/flake8/">flake8</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">perl</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../perl/基本语法/">基本语法</a>
+                </li>
     </ul>
 	    </li>
           
@@ -164,6 +199,10 @@
                 <li class="">
                     
     <a class="" href="../../regexp/成对括号/">成对括号</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/常用正则/">常用正则</a>
                 </li>
     </ul>
 	    </li>
@@ -215,7 +254,7 @@
 其他语言版本： <br />
   中文          - http://sed.sourceforge.net/sed1line_zh-CN.html  </p>
 </blockquote>
-<h2 id="_1">文本间隔：</h2>
+<h2 id="_1">文本间隔：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <pre><code> # 在每一行后面增加一空行
  sed G
  # 将原来的所有空行删除并在每一行后面增加一空行。
@@ -237,14 +276,14 @@
 </code></pre>
 
 <p># 为文件中的每一行进行编号（简单的左对齐方式）。这里使用了“制表符”
- # （tab，见本文末尾关于'\t'的用法的描述）而不是空格来对齐边缘。
- sed = filename | sed 'N;s/\n/\t/'
+ # （tab，见本文末尾关于&rsquo;\t&rsquo;的用法的描述）而不是空格来对齐边缘。
+ sed = filename | sed &lsquo;N;s/\n/\t/&rsquo;
  # 对文件中的所有行编号（行号在左，文字右端对齐）。
- sed = filename | sed 'N; s/^/     /; s/ *.{6,}\n/\1  /'
+ sed = filename | sed &lsquo;N; s/^/     /; s/ *.{6,}\n/\1  /&rsquo;
  # 对文件中的所有行编号，但只显示非空白行的行号。
- sed '/./=' filename | sed '/./N; s/\n/ /'
- # 计算行数 （模拟 "wc -l"）
- sed -n '$='
+ sed &lsquo;/./=&rsquo; filename | sed &lsquo;/./N; s/\n/ /&rsquo;
+ # 计算行数 （模拟 &ldquo;wc -l&rdquo;）
+ sed -n &lsquo;$=&rsquo;
  ```
 文本转换和替代：</p>
 <hr />
@@ -328,108 +367,108 @@
  # 显示文件中的第一行 （模拟“head -1”命令）
  sed q
  # 显示文件中的最后10行 （模拟“tail”）
- sed -e :a -e '$q;N;11,$D;ba'
+ sed -e :a -e &lsquo;$q;N;11,$D;ba&rsquo;
  # 显示文件中的最后2行（模拟“tail -2”命令）
- sed '$!N;$!D'
+ sed &lsquo;$!N;$!D&rsquo;
  # 显示文件中的最后一行（模拟“tail -1”）
- sed '$!d'                        # 方法1
- sed -n '$p'                      # 方法2
+ sed &lsquo;$!d&rsquo;                        # 方法1
+ sed -n &lsquo;$p&rsquo;                      # 方法2
  # 显示文件中的倒数第二行
- sed -e '$!{h;d;}' -e x              # 当文件中只有一行时，输入空行
- sed -e '1{$q;}' -e '$!{h;d;}' -e x  # 当文件中只有一行时，显示该行
- sed -e '1{$d;}' -e '$!{h;d;}' -e x  # 当文件中只有一行时，不输出
+ sed -e &lsquo;$!{h;d;}&rsquo; -e x              # 当文件中只有一行时，输入空行
+ sed -e &lsquo;1{$q;}&rsquo; -e &lsquo;$!{h;d;}&rsquo; -e x  # 当文件中只有一行时，显示该行
+ sed -e &lsquo;1{$d;}&rsquo; -e &lsquo;$!{h;d;}&rsquo; -e x  # 当文件中只有一行时，不输出
  # 只显示匹配正则表达式的行（模拟“grep”）
- sed -n '/regexp/p'               # 方法1
- sed '/regexp/!d'                 # 方法2
+ sed -n &lsquo;/regexp/p&rsquo;               # 方法1
+ sed &lsquo;/regexp/!d&rsquo;                 # 方法2
  # 只显示“不”匹配正则表达式的行（模拟“grep -v”）
- sed -n '/regexp/!p'              # 方法1，与前面的命令相对应
- sed '/regexp/d'                  # 方法2，类似的语法
+ sed -n &lsquo;/regexp/!p&rsquo;              # 方法1，与前面的命令相对应
+ sed &lsquo;/regexp/d&rsquo;                  # 方法2，类似的语法
  # 查找“regexp”并将匹配行的上一行显示出来，但并不显示匹配行
- sed -n '/regexp/{g;1!p;};h'
+ sed -n &lsquo;/regexp/{g;1!p;};h&rsquo;
  # 查找“regexp”并将匹配行的下一行显示出来，但并不显示匹配行
- sed -n '/regexp/{n;p;}'
+ sed -n &lsquo;/regexp/{n;p;}&rsquo;
  # 显示包含“regexp”的行及其前后行，并在第一行之前加上“regexp”所
  # 在行的行号 （类似“grep -A1 -B1”）
- sed -n -e '/regexp/{=;x;1!p;g;$!N;p;D;}' -e h
+ sed -n -e &lsquo;/regexp/{=;x;1!p;g;$!N;p;D;}&rsquo; -e h
  # 显示包含“AAA”、“BBB”或“CCC”的行（任意次序）
- sed '/AAA/!d; /BBB/!d; /CCC/!d'  # 字串的次序不影响结果
+ sed &lsquo;/AAA/!d; /BBB/!d; /CCC/!d&rsquo;  # 字串的次序不影响结果
  # 显示包含“AAA”、“BBB”和“CCC”的行（固定次序）
- sed '/AAA.<em>BBB.</em>CCC/!d'
+ sed &lsquo;/AAA.<em>BBB.</em>CCC/!d&rsquo;
  # 显示包含“AAA”“BBB”或“CCC”的行 （模拟“egrep”）
- sed -e '/AAA/b' -e '/BBB/b' -e '/CCC/b' -e d    # 多数sed
- gsed '/AAA|BBB|CCC/!d'                        # 对GNU sed有效
+ sed -e &lsquo;/AAA/b&rsquo; -e &lsquo;/BBB/b&rsquo; -e &lsquo;/CCC/b&rsquo; -e d    # 多数sed
+ gsed &lsquo;/AAA|BBB|CCC/!d&rsquo;                        # 对GNU sed有效
  # 显示包含“AAA”的段落 （段落间以空行分隔）
  # HHsed v1.5 必须在“x;”后加入“G;”，接下来的3个脚本都是这样
- sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;'
+ sed -e &lsquo;/./{H;$!d;}&rsquo; -e &lsquo;x;/AAA/!d;&rsquo;
  # 显示包含“AAA”“BBB”和“CCC”三个字串的段落 （任意次序）
- sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;/BBB/!d;/CCC/!d'
+ sed -e &lsquo;/./{H;$!d;}&rsquo; -e &lsquo;x;/AAA/!d;/BBB/!d;/CCC/!d&rsquo;
  # 显示包含“AAA”、“BBB”、“CCC”三者中任一字串的段落 （任意次序）
- sed -e '/./{H;$!d;}' -e 'x;/AAA/b' -e '/BBB/b' -e '/CCC/b' -e d
- gsed '/./{H;$!d;};x;/AAA|BBB|CCC/b;d'         # 只对GNU sed有效
+ sed -e &lsquo;/./{H;$!d;}&rsquo; -e &lsquo;x;/AAA/b&rsquo; -e &lsquo;/BBB/b&rsquo; -e &lsquo;/CCC/b&rsquo; -e d
+ gsed &lsquo;/./{H;$!d;};x;/AAA|BBB|CCC/b;d&rsquo;         # 只对GNU sed有效
  # 显示包含65个或以上字符的行
- sed -n '/^.{65}/p'
+ sed -n &lsquo;/^.{65}/p&rsquo;
  # 显示包含65个以下字符的行
- sed -n '/^.{65}/!p'            # 方法1，与上面的脚本相对应
- sed '/^.{65}/d'                # 方法2，更简便一点的方法
+ sed -n &lsquo;/^.{65}/!p&rsquo;            # 方法1，与上面的脚本相对应
+ sed &lsquo;/^.{65}/d&rsquo;                # 方法2，更简便一点的方法
  # 显示部分文本——从包含正则表达式的行开始到最后一行结束
- sed -n '/regexp/,$p'
+ sed -n &lsquo;/regexp/,$p&rsquo;
  # 显示部分文本——指定行号范围（从第8至第12行，含8和12行）
- sed -n '8,12p'                   # 方法1
- sed '8,12!d'                     # 方法2
+ sed -n &lsquo;8,12p&rsquo;                   # 方法1
+ sed &lsquo;8,12!d&rsquo;                     # 方法2
  # 显示第52行
- sed -n '52p'                     # 方法1
- sed '52!d'                       # 方法2
- sed '52q;d'                      # 方法3, 处理大文件时更有效率
+ sed -n &lsquo;52p&rsquo;                     # 方法1
+ sed &lsquo;52!d&rsquo;                       # 方法2
+ sed &lsquo;52q;d&rsquo;                      # 方法3, 处理大文件时更有效率
  # 从第3行开始，每7行显示一次  <br />
- gsed -n '3~7p'                   # 只对GNU sed有效
- sed -n '3,${p;n;n;n;n;n;n;}'     # 其他sed
+ gsed -n &lsquo;3~7p&rsquo;                   # 只对GNU sed有效
+ sed -n &lsquo;3,${p;n;n;n;n;n;n;}&rsquo;     # 其他sed
  # 显示两个正则表达式之间的文本（包含）
- sed -n '/Iowa/,/Montana/p'       # 区分大小写方式</p>
+ sed -n &lsquo;/Iowa/,/Montana/p&rsquo;       # 区分大小写方式</p>
 <pre><code>选择性地删除特定行：
 --------
 </code></pre>
 
 <p># 显示通篇文档，除了两个正则表达式之间的内容
- sed '/Iowa/,/Montana/d'
+ sed &lsquo;/Iowa/,/Montana/d&rsquo;
  # 删除文件中相邻的重复行（模拟“uniq”）
  # 只保留重复行中的第一行，其他行删除
- sed '$!N; /^.<em>\n\1$/!P; D'
+ sed &lsquo;$!N; /^.<em>\n\1$/!P; D&rsquo;
  # 删除文件中的重复行，不管有无相邻。注意hold space所能支持的缓存
  # 大小，或者使用GNU sed。
- sed -n 'G; s/\n/&amp;&amp;/; /^[ -~]</em>\n.<em>\n\1/d; s/\n//; h; P'
+ sed -n &lsquo;G; s/\n/&amp;&amp;/; /^[ -~]</em>\n.<em>\n\1/d; s/\n//; h; P&rsquo;
  # 删除除重复行外的所有行（模拟“uniq -d”）
- sed '$!N; s/^.</em>\n\1$/\1/; t; D'
+ sed &lsquo;$!N; s/^.</em>\n\1$/\1/; t; D&rsquo;
  # 删除文件中开头的10行
- sed '1,10d'
+ sed &lsquo;1,10d&rsquo;
  # 删除文件中的最后一行
- sed '$d'
+ sed &lsquo;$d&rsquo;
  # 删除文件中的最后两行
- sed 'N;$!P;$!D;$d'
+ sed &lsquo;N;$!P;$!D;$d&rsquo;
  # 删除文件中的最后10行
- sed -e :a -e '$d;N;2,10ba' -e 'P;D'   # 方法1
- sed -n -e :a -e '1,10!{P;N;D;};N;ba'  # 方法2
+ sed -e :a -e &lsquo;$d;N;2,10ba&rsquo; -e &lsquo;P;D&rsquo;   # 方法1
+ sed -n -e :a -e &lsquo;1,10!{P;N;D;};N;ba&rsquo;  # 方法2
  # 删除8的倍数行
- gsed '0~8d'                           # 只对GNU sed有效
- sed 'n;n;n;n;n;n;n;d;'                # 其他sed
+ gsed &lsquo;0~8d&rsquo;                           # 只对GNU sed有效
+ sed &lsquo;n;n;n;n;n;n;n;d;&rsquo;                # 其他sed
  # 删除匹配式样的行
- sed '/pattern/d'                      # 删除含pattern的行。当然pattern
+ sed &lsquo;/pattern/d&rsquo;                      # 删除含pattern的行。当然pattern
                                        # 可以换成任何有效的正则表达式
- # 删除文件中的所有空行（与“grep '.' ”效果相同）
- sed '/^$/d'                           # 方法1
- sed '/./!d'                           # 方法2
+ # 删除文件中的所有空行（与“grep &lsquo;.&rsquo; ”效果相同）
+ sed &lsquo;/^$/d&rsquo;                           # 方法1
+ sed &lsquo;/./!d&rsquo;                           # 方法2
  # 只保留多个相邻空行的第一行。并且删除文件顶部和尾部的空行。
  # （模拟“cat -s”）
- sed '/./,/^$/!d'        #方法1，删除文件顶部的空行，允许尾部保留一空行
- sed '/^$/N;/\n$/D'      #方法2，允许顶部保留一空行，尾部不留空行
+ sed &lsquo;/./,/^$/!d&rsquo;        #方法1，删除文件顶部的空行，允许尾部保留一空行
+ sed &lsquo;/^$/N;/\n$/D&rsquo;      #方法2，允许顶部保留一空行，尾部不留空行
  # 只保留多个相邻空行的前两行。
- sed '/^$/N;/\n$/N;//D'
+ sed &lsquo;/^$/N;/\n$/N;//D&rsquo;
  # 删除文件顶部的所有空行
- sed '/./,$!d'
+ sed &lsquo;/./,$!d&rsquo;
  # 删除文件尾部的所有空行
- sed -e :a -e '/^\n<em>$/{$d;N;ba' -e '}'  # 对所有sed有效
- sed -e :a -e '/^\n</em>$/N;/\n$/ba'        # 同上，但只对 gsed 3.02.*有效
+ sed -e :a -e &lsquo;/^\n<em>$/{$d;N;ba&rsquo; -e &lsquo;}&rsquo;  # 对所有sed有效
+ sed -e :a -e &lsquo;/^\n</em>$/N;/\n$/ba&rsquo;        # 同上，但只对 gsed 3.02.*有效
  # 删除每个段落的最后一行
- sed -n '/^$/{p;h;};/./{x;/./p;}'
+ sed -n &lsquo;/^$/{p;h;};/./{x;/./p;}&rsquo;
  ```
 特殊应用：</p>
 <hr />
@@ -501,12 +540,12 @@ Unix系统所提供的手册页（“man”）也会有所帮助（试一下这�
 不过GNU版本的sed允许使用更简洁的语法。想像一下当读者看到一个很长的命令时的心情：
 </code></pre>
 
-<p>sed -e '/AAA/b' -e '/BBB/b' -e '/CCC/b' -e d</p>
+<p>sed -e &lsquo;/AAA/b&rsquo; -e &lsquo;/BBB/b&rsquo; -e &lsquo;/CCC/b&rsquo; -e d</p>
 <pre><code>好消息是GNU sed能让命令更紧凑：
 </code></pre>
 
-<p>sed '/AAA/b;/BBB/b;/CCC/b;d'      # 甚至可以写成
-sed '/AAA|BBB|CCC/b;d'</p>
+<p>sed &lsquo;/AAA/b;/BBB/b;/CCC/b;d&rsquo;      # 甚至可以写成
+sed &lsquo;/AAA|BBB|CCC/b;d&rsquo;</p>
 <pre><code>此外，请注意虽然许多版本的sed接受象“/one/ s/RE1/RE2/”这种在's'前带有空
 格的命令，但这些版本中有些却不接受这样的命令:“/one/! s/RE1/RE2/”。这时
 只需要把中间的空格去掉就行了。
@@ -514,15 +553,15 @@ sed '/AAA|BBB|CCC/b;d'</p>
 当由于某种原因（比如输入文件较大、处理器或硬盘较慢等）需要提高命令执行速度时，可以考虑在替换命令（“s/.../.../”）前面加上地址表达式来提高速度。举例来说：
 </code></pre>
 
-<p>sed 's/foo/bar/g' filename         # 标准替换命令
-sed '/foo/ s/foo/bar/g' filename   # 速度更快
-sed '/foo/ s//bar/g' filename      # 简写形式</p>
+<p>sed &lsquo;s/foo/bar/g&rsquo; filename         # 标准替换命令
+sed &lsquo;/foo/ s/foo/bar/g&rsquo; filename   # 速度更快
+sed &lsquo;/foo/ s//bar/g&rsquo; filename      # 简写形式</p>
 <pre><code>当只需要显示文件的前面的部分或需要删除后面的内容时，可以在脚本中使用“q”
 命令（退出命令）。在处理大的文件时，这会节省大量时间。因此：
 </code></pre>
 
-<p>sed -n '45,50p' filename           # 显示第45到50行
-sed -n '51q;45,50p' filename       # 一样，但快得多</p>
+<p>sed -n &lsquo;45,50p&rsquo; filename           # 显示第45到50行
+sed -n &lsquo;51q;45,50p&rsquo; filename       # 一样，但快得多</p>
 <pre><code>如果你有其他的单行脚本想与大家分享或者你发现了本文档中错误的地方，请发电
 子邮件给本文档的作者（Eric Pement）。邮件中请记得提供你所使用的sed版本、 
 该sed所运行的操作系统及对问题的适当描述。本文所指的单行脚本指命令行的长
@@ -541,7 +580,7 @@ sed -n '51q;45,50p' filename       # 一样，但快得多</p>
  Greg Ubben                           # 有诸多贡献并提供了许多帮助<br />
  ```</p>
 <hr />
-<p>译注1：大部分情况下，sed脚本无论多长都能写成单行的形式（通过<code>-e'选项和</code>;'
+<p>译注1：大部分情况下，sed脚本无论多长都能写成单行的形式（通过<code>-e'选项和</code>;&rsquo;
 号）——只要命令解释器支持，所以这里说的单行脚本除了能写成一行还对长度有
 所限制。因为这些单行脚本的意义不在于它们是以单行的形式出现。而是让用户能
 方便地在命令行中使用这些紧凑的脚本才是其意义所在。</p>

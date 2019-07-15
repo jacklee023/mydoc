@@ -72,6 +72,14 @@
                     
     <a class="" href="../../linux/后台运行/">linux后台运行</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/tmux/">tmux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../linux/git/">git</a>
+                </li>
     </ul>
 	    </li>
           
@@ -82,6 +90,14 @@
                 <li class="">
                     
     <a class="" href="../../nas/nas/">nas</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/ipkg/">ipkg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../nas/frp/">frp</a>
                 </li>
     </ul>
 	    </li>
@@ -97,6 +113,10 @@
                 <li class="">
                     
     <a class="" href="../../vim/vunble/">vunble</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../vim/powershell-vim/">在PowerShell中使用Vim</a>
                 </li>
     </ul>
 	    </li>
@@ -172,6 +192,21 @@
                     
     <a class="" href="../python unittest/">python的unittest单元测试框架断言整理汇总</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../flake8/">flake8</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">perl</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../perl/基本语法/">基本语法</a>
+                </li>
     </ul>
 	    </li>
           
@@ -186,6 +221,10 @@
                 <li class="">
                     
     <a class="" href="../../regexp/成对括号/">成对括号</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../regexp/常用正则/">常用正则</a>
                 </li>
     </ul>
 	    </li>
@@ -226,18 +265,18 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="1-package">1 <strong>package</strong></h2>
+                <h2 id="1-package">1 <strong>package</strong><a class="headerlink" href="#1-package" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.cnblogs.com/jinjiangongzuoshi/p/6596268.html">哪些 Python 库让你相见恨晚？【转】</a>
 <a href="https://www.zhihu.com/question/24590883">哪些 Python 库让你相见恨晚？</a></p>
-<h3 id="11-pickle">1.1 <strong>pickle</strong></h3>
-<h4 id="111-dump">1.1.1 <strong>dump的参数</strong></h4>
+<h3 id="11-pickle">1.1 <strong>pickle</strong><a class="headerlink" href="#11-pickle" title="Permanent link">&para;</a></h3>
+<h4 id="111-dump">1.1.1 <strong>dump的参数</strong><a class="headerlink" href="#111-dump" title="Permanent link">&para;</a></h4>
 <pre><code>pickle.dump(obj, file, protocol=None, *, fix_imports=True)
 </code></pre>
 
 <p>pickle.dump的protocol参数可以指定序列化模式，其中0表示文本文件，1以上表示二进制文件
 配合fix_imports参数可以使序列化文件可以兼容python2</p>
-<h3 id="12-mccabd">1.2 <strong>mccabd</strong></h3>
-<h4 id="121">1.2.1 <strong>介绍</strong></h4>
+<h3 id="12-mccabd">1.2 <strong>mccabd</strong><a class="headerlink" href="#12-mccabd" title="Permanent link">&para;</a></h3>
+<h4 id="121">1.2.1 <strong>介绍</strong><a class="headerlink" href="#121" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>Cyclomatic Complexity 圈复杂度
 McCabe 是一种度量程序复杂度的方法，如果单个子程序复杂度过高，或许就需要拆分逻辑提高程序的易读性。</p>
@@ -245,7 +284,7 @@ McCabe 是一种度量程序复杂度的方法，如果单个子程序复杂度�
 <ul>
 <li><a href="https://kinegratii.github.io/2018/04/08/cyclomatic-complexity-and-mccabe/">圈复杂度和McCabe</a></li>
 </ul>
-<h4 id="122">1.2.2 <strong>示例</strong></h4>
+<h4 id="122">1.2.2 <strong>示例</strong><a class="headerlink" href="#122" title="Permanent link">&para;</a></h4>
 <pre><code class="sh">&gt;&gt; pip install mccabe
 &gt;&gt; python -m mccabe factorial.py 
 &gt;&gt; python -m mccabe --min 5 mccabe.py
@@ -255,52 +294,52 @@ McCabe 是一种度量程序复杂度的方法，如果单个子程序复杂度�
 <ul>
 <li><a href="https://dreampuf.github.io/GraphvizOnline/">产生dot有向图</a></li>
 </ul>
-<h3 id="13-pyreverse">1.3 <strong>Pyreverse</strong></h3>
-<h4 id="131">1.3.1 <strong>介绍</strong></h4>
+<h3 id="13-pyreverse">1.3 <strong>Pyreverse</strong><a class="headerlink" href="#13-pyreverse" title="Permanent link">&para;</a></h3>
+<h4 id="131">1.3.1 <strong>介绍</strong><a class="headerlink" href="#131" title="Permanent link">&para;</a></h4>
 <p>代码 UML 生成工具, 帮助我们理解继承关系 </p>
-<h4 id="132">1.3.2 <strong>示例</strong></h4>
+<h4 id="132">1.3.2 <strong>示例</strong><a class="headerlink" href="#132" title="Permanent link">&para;</a></h4>
 <p>安装成功但报错无法工作，可能是不支持python3</p>
 <blockquote>
 <p>TODO</p>
 </blockquote>
-<h3 id="14-mypy">1.4 <strong>mypy</strong></h3>
-<h4 id="141">1.4.1 <strong>介绍</strong></h4>
+<h3 id="14-mypy">1.4 <strong>mypy</strong><a class="headerlink" href="#14-mypy" title="Permanent link">&para;</a></h3>
+<h4 id="141">1.4.1 <strong>介绍</strong><a class="headerlink" href="#141" title="Permanent link">&para;</a></h4>
 <p>类型检查工具，结合 python3 的 type hint 或者 python2 中的类型注释可以做类型检查。</p>
-<h4 id="142">1.4.2 <strong>示例</strong></h4>
+<h4 id="142">1.4.2 <strong>示例</strong><a class="headerlink" href="#142" title="Permanent link">&para;</a></h4>
 <pre><code class="python">mypy ./demo.py
 </code></pre>
 
-<h4 id="143">1.4.3 <strong>参考</strong></h4>
+<h4 id="143">1.4.3 <strong>参考</strong><a class="headerlink" href="#143" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="http://blog.lujun9972.win/blog/2018/03/12/%E4%BD%BF%E7%94%A8mypy%E5%AF%B9python%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E9%9D%99%E6%80%81%E6%A3%80%E6%9F%A5/">mypy使用</a></li>
 </ul>
-<h3 id="15-clonedigger">1.5 <strong>Clonedigger</strong></h3>
-<h4 id="151">1.5.1 <strong>介绍</strong></h4>
+<h3 id="15-clonedigger">1.5 <strong>Clonedigger</strong><a class="headerlink" href="#15-clonedigger" title="Permanent link">&para;</a></h3>
+<h4 id="151">1.5.1 <strong>介绍</strong><a class="headerlink" href="#151" title="Permanent link">&para;</a></h4>
 <p>重复代码 </p>
 <pre><code class="sh">git clone https://github.com/jlachowski/clonedigger
 cd clonedigger
 python setup.py install
 </code></pre>
 
-<h4 id="152">1.5.2 <strong>示例</strong></h4>
+<h4 id="152">1.5.2 <strong>示例</strong><a class="headerlink" href="#152" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>TODO</p>
 </blockquote>
-<h4 id="153">1.5.3 <strong>参考</strong></h4>
+<h4 id="153">1.5.3 <strong>参考</strong><a class="headerlink" href="#153" title="Permanent link">&para;</a></h4>
 <p><a href="https://www.cnblogs.com/shenh/p/10412685.html">python ddt数据驱动（简化重复代码）</a></p>
-<h3 id="16-urwid">1.6 <strong>urwid</strong></h3>
-<h4 id="161">1.6.1 <strong>介绍</strong></h4>
+<h3 id="16-urwid">1.6 <strong>urwid</strong><a class="headerlink" href="#16-urwid" title="Permanent link">&para;</a></h3>
+<h4 id="161">1.6.1 <strong>介绍</strong><a class="headerlink" href="#161" title="Permanent link">&para;</a></h4>
 <p>urwid 不支持windows（fcntl无法安装），据说比较传统，感觉上跟QT比较像</p>
-<h4 id="162">1.6.2 <strong>参考</strong></h4>
+<h4 id="162">1.6.2 <strong>参考</strong><a class="headerlink" href="#162" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://agave233.github.io/2018/03/11/%E6%B5%85%E8%B0%88%E7%94%A8urwid%E5%BA%93%E5%AE%9E%E7%8E%B0%E7%BB%88%E7%AB%AF%E7%9A%84GUI%E7%BC%96%E7%A8%8B/">浅谈用urwid库实现终端的GUI编程</a></li>
 <li><a href="http://urwid.org/index.html">urwid官网</a></li>
 </ul>
-<h3 id="17-npyscreen">1.7 <strong>npyscreen</strong></h3>
-<h4 id="171">1.7.1 <strong>介绍</strong></h4>
+<h3 id="17-npyscreen">1.7 <strong>npyscreen</strong><a class="headerlink" href="#17-npyscreen" title="Permanent link">&para;</a></h3>
+<h4 id="171">1.7.1 <strong>介绍</strong><a class="headerlink" href="#171" title="Permanent link">&para;</a></h4>
 <p>依赖curses库，该库在Windows下需要用whl按照，但官网提供的whl包没有python34版，无法解决</p>
-<h3 id="18-cpickle">1.8 <strong>cPickle</strong></h3>
-<h3 id="19-pipe">1.9 <strong>pipe</strong></h3>
+<h3 id="18-cpickle">1.8 <strong>cPickle</strong><a class="headerlink" href="#18-cpickle" title="Permanent link">&para;</a></h3>
+<h3 id="19-pipe">1.9 <strong>pipe</strong><a class="headerlink" href="#19-pipe" title="Permanent link">&para;</a></h3>
               
             </div>
           </div>
