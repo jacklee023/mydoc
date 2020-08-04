@@ -21,6 +21,7 @@ pages:
         - 代码片段: 'vim/vim code slice.md'
         - vunble: 'vim/vunble.md'
         - 在PowerShell中使用Vim : 'vim/powershell-vim.md'
+        - 安装python mode: 'vim/python mode.md'
     - VSCode: 
         - vscode访问修改远程文件: 'vscode/vscode远程.md'
     - python: 
