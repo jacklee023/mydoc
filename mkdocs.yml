@@ -33,6 +33,7 @@ pages:
         - pip镜像源: 'python/pip.md'
         - python的unittest单元测试框架断言整理汇总: 'python/python unittest.md'
         - flake8: 'python/flake8.md'
+        - pyton mode: 'python/pyton mode.md'
     - perl:
         - 基本语法: 'perl/基本语法.md'
     - 正则表达式: 
